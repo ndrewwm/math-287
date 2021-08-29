@@ -1,0 +1,48 @@
+\documentclass[12pt,oneside]{amsart}
+
+\title{Math 287 Homework 1}
+\author{Andrew Moore}
+\date{September 3, 2021} % the due date of the homework
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage[letterpaper,margin=1.5in]{geometry}
+
+% Extra space between lines
+\linespread{2.4}
+
+\theoremstyle{remark}
+\newtheorem{exer}{Exercise}
+
+\newenvironment{answer}{\bigskip\noindent\emph{Answer.}}{\hfill$\diamond$\newline}
+
+\begin{document}
+\maketitle
+
+\newpage
+\begin{exer}
+Proposition 1.11(vi). If $m$, $n$, $p$, and $q$ are integers, then \newline
+$(m(n+p))q = (mn)q + m(pq)$.
+\end{exer}
+
+\begin{proof}
+Let $m, n, p, q \in Z.$ We will use axioms related to multiplication to show that $(m(n + p))q = (mn)q + m(pq):$
+
+\begin{align*}
+(m(n + p))q &= (m(n + p))q \\
+            &= (mn + mp)q \tag{Axiom 1.1.3} \\
+            &= mnq + mpq \tag{Axiom 1.1.3} \\
+            &= (mn)q + m(pq). \tag{Axiom 1.1.5}
+\end{align*}
+\end{proof}
+
+\newpage
+\begin{exer}
+Proposition 1.22(i). For all $m \in \mathbf{Z}$, $-(-m) = m$.
+\end{exer}
+
+\begin{proof}
+Let $m$ \in Z.
+\end{proof}
+
+\end{document}
