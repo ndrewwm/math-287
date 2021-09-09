@@ -40,9 +40,17 @@ If $m < n$ and $p < 0$ then $np < mp$.
 \end{exer}
 
 \begin{proof}
--enter your proof here-
-\end{proof}
+We are told that $n - m \in \bfN$, and $0 - p \in \bfN$ (i.e., $-p \in \bfN$, based on Axiom 2.1.4). We intend to show that $mp - np \in \bfN$. Rearranging $mp - np$ we have:
+\begin{align*}
+mp - np &= p(m - n) \\
+        &= p(m(-1)(-1) + n(-1)) \\
+        &= p(-1)(m(-1) + n) \\
+        &= -p((-m) + n) \\
+        &= -p(n - m) \in \bfN.
+\end{align*}
 
+The series of steps above demonstrate that $mp - np$ can be expressed as two terms we know to be natural numbers (based on our initial assumptions): $-p$ and $(n - m)$. From Axiom 2.1.2 tells us that the product of any two natural numbers is also in $\bfN$. Therefore, $(mp - np)$ must be in $\bfN$, i.e. $np < mp$.
+\end{proof}
 
 \newpage
 \begin{exer}
@@ -93,9 +101,9 @@ For $k = 3$:
            0 \geq 4
 \end{align*}
 
-The statement $0 \geq 4$ is \emph{false}, because $0 \neq 4$ and $0 - 4 \notin \bfN$. It is trivial to demonstrate the same result for $k = 1$ and $k = 2$, and this is left to the reader. Assuming that $k$ can't be $\leq 3$, let us redefine $k$ to be $k = 3 + j$, such that $j \in \bfN$ and $j \geq 1$. We will now prove the base case.
+The statement $0 \geq 4$ is \emph{false}, because $0 \neq 4$ and $0 - 4 \notin \bfN$. It is trivial to demonstrate the same result for $k = 1$ and $k = 2$, and this is left to the reader. Assuming that $k$ can't be $\leq 3$, let us redefine $k$ to be $k = 3 + j$, such that $j \in \bfN$ and $j \geq 1$. We will now prove the base case ($j = 1$).
 
-For $k = 3 + 1 = 4$ ($j = 1$):
+For $k = 3 + 1 = 4$:
 \begin{align*}
     k^2 - 3k \geq 4 \Rightarrow
 (4)^2 - 3(4) \geq 4 \Rightarrow
