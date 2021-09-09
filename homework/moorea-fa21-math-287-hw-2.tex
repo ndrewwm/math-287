@@ -51,7 +51,17 @@ if $p < 0$ and $mp < np$ then $n < m$.
 \end{exer}
 
 \begin{proof}
--enter your proof here-
+We are told we can assume the following: $0 - p \in \bfN$, and $np - mp \in \bfN$. We must show that $n < m$, i.e. $m - n \in \bfN$. Rearranging $np - mp \in \bfN$, we have:
+\begin{align*}
+np - mp &= p(n - m) \\
+        &= p(n(-1)(-1) + m(-1)) \\
+        &= p(-1)(n(-1) + m) \\
+        &= -p(-n + m) \\
+        &= -p(m - n) \in \bfN.
+\end{align*}
+
+We can reexpress $0 - p \in \bfN$ as $-p \in \bfN$ (which we know from Axiom 2.1.4). From the series of equations above, we've seen that $np - mp \in \bfN$ can be expressed as $-p(m - n) \in \bfN$ Axiom 2.1.2 tells us that the product of any two numbers in $\bfN$ is also in $\bfN$. Therefore, $(m - n)$ must be in $\bfN$, i.e. $n < m$.
+
 \end{proof}
 
 \newpage
@@ -69,11 +79,43 @@ and prove your answer.
 
 \begin{answer}
 \begin{claim}
-$k^2 - 3k \geq 4$ for (enter which values of k work)
+$k^2 - 3k \geq 4$ for $k \geq 4$.
 \end{claim}
 
 \begin{proof}
-(enter your proof here)
+We are given the inequality, $k^2 - 3k \geq 4$, and are asked to justify which values of $k$ the inequality is true. We will prove the claim $k^2 - 3k \geq 4$ for $k \geq 4$ using induction. First, note that $k \leq 3$ does not satisfy the inequality.
+
+For $k = 3$:
+\begin{align*}
+    k^2 - 3k \geq 4 \Rightarrow
+(3)^2 - 3(3) \geq 4 \Rightarrow
+       9 - 9 \geq 4 \Rightarrow
+           0 \geq 4
+\end{align*}
+
+The statement $0 \geq 4$ is \emph{false}, because $0 \neq 4$ and $0 - 4 \notin \bfN$. It is trivial to demonstrate the same result for $k = 1$ and $k = 2$, and this is left to the reader. Assuming that $k$ can't be $\leq 3$, let us redefine $k$ to be $k = 3 + j$, such that $j \in \bfN$ and $j \geq 1$. We will now prove the base case.
+
+For $k = 3 + 1 = 4$ ($j = 1$):
+\begin{align*}
+    k^2 - 3k \geq 4 \Rightarrow
+(4)^2 - 3(4) \geq 4 \Rightarrow
+     16 - 12 \geq 4 \Rightarrow
+           4 \geq 4
+\end{align*}
+
+This last statement is true ($4 = 4$). We will now show that the results apply for all j, by proving this is true for $k = 4 + (j + 1)$.
+
+For $k = 4 + (j + 1) = 5 + j$:
+\begin{align*}
+   (k + 1)^2 - 3(k + 1) &\geq 4 \\
+(k^2 + 2k + 1) - 3k - 3 &\geq 4 \\
+            k^2 - k - 2 &\geq 4 \\
+(5 + j)^2 - (5 + j) - 2 &\geq 4 \\
+ 25 + 10j + j^2 - j - 7 &\geq 4 \\
+          j^2 + 9j + 18 &\geq 4
+\end{align*}
+
+The final statement $j^2 + 9j + 18 - 4 \in \bfN$ is true because there is no value of $j$ in $\bfN$ that could cause the value of the statement to be $\leq 0$.
 \end{proof}
 \end{answer}
 
