@@ -74,10 +74,45 @@ We can reexpress $0 - p \in \bfN$ as $-p \in \bfN$ (which we know from Axiom 2.1
 
 \newpage
 \begin{exer}
-Proposition 2.26. In this problem, the textbook gives a proof. Your homework is to rewrite the proof in more detail.
+Proposition 2.26. \emph{For all integers} $k \geq -3$, $3k^2 + 21k + 37 >= 0$.
 
-Imagine a student in the class is confused by the proof. Rewrite the proof in a way that would make sense and be clear for a confused student.
+% In this problem, the textbook gives a proof. Your homework is to rewrite the proof in more detail.
+
+% Imagine a student in the class is confused by the proof. Rewrite the proof in a way that would make sense and be clear for a confused student.
 \end{exer}
+
+\begin{proof}
+We are told that $k \in \bfZ$. We are asked to prove the claim that for \emph{all} $k \geq -3$, the evaluation of $3k^2 + 21k + 37$ will be greater than or equal to 0. This claim can be proven using induction.
+
+For induction, we test the statement using a \emph{base case}. For the base case, we'll use the minimum value of $k$, that is, $-3$:
+\begin{align*}
+      3k^2 + 21k + 37 &\geq 0 \\
+3(-3)^2 + 21(-3) + 37 &\geq 0 \\
+               64 -63 &\geq 0 \\
+                    1 &\geq 0.
+\end{align*}
+
+Having shown the base case to be true, we know that at least for some values of $k \geq -3$, the statement $3k^2 + 21k + 37 \geq 0$ is true. Now let's imagine adding 1 to $k$, and evaluating the statement.
+
+For $k = n + 1$ (where $n \geq -3$) we have:
+\begin{align*}
+                  3k^2 + 21k + 37 &\geq 0 \\
+      3(n + 1)^2 + 21(n + 1) + 37 &\geq 0 \\
+(3n^2 + 6n + 3) + (21n + 21) + 37 &\geq 0 \\
+3n^2 + 27n + 61 &\geq 0.
+\end{align*}
+
+This result is larger than what results when $k = n$, i.e. our inductive hypothesis:
+\begin{align*}
+(3n^2 + 27n + 61) - (3n^2 + 21n + 37) &= 6n + 24 \\
+        3n^2 + 27n + 61 \geq 6n + 24 &\geq 0.
+\end{align*}
+
+% not super confident about this bit, but need to turn in :|
+
+We know that $n \geq -3$, so $6n + 24 \geq 6 \geq 0$, and therefore $3(n + 1)^2 + 21(n + 1) + 37 \geq 0$. In essence, we have seen that if you pick an arbitrary $n \in \bfN$, such that $n \geq -3$, the value of any $n + 1$ applied to the expression will be greater than 0. This concludes our induction.
+
+\end{proof}
 
 \newpage
 \begin{exer}
