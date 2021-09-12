@@ -26,6 +26,12 @@
 \begin{document}
 \maketitle
 
+%
+%
+% Question 1
+%
+%
+
 \newpage
 \begin{exer}
 Project 3.1. Express each of the following statements using quantifiers.
@@ -37,15 +43,20 @@ Project 3.1. Express each of the following statements using quantifiers.
 
 \begin{answer}
 \begin{enumerate}[label={(\roman*)},start={3}]
-\item -enter your answer here-
-\item -enter your answer here-
+\item $\forall m \in \bfZ, \exists a \in \bfZ$ and $\exists b \in \bfZ$, such that $m = a \cdot b$.
+\item There exist integers $x$ and $y$ in $\bfZ$, such that the equation $x^2 - 2y^2 = 3$.
 \end{enumerate}
 \end{answer}
 
+%
+%
+% Question 2
+%
+%
+
 \newpage
 \begin{exer}
-Project 3.2. In each of the following cases explain what is meant by the statement
-and decide whether it is true or false.
+Project 3.2. In each of the following cases explain what is meant by the statement and decide whether it is true or false.
 \begin{enumerate}[label={(\roman*)},start={3}]
 \item For each $x \in \mathbf{Z}$ there exists $y \in \mathbf{Z}$ such that $xy=x$.
 \item There exists $y \in \mathbf{Z}$ such that for each $x \in \mathbf{Z}$, $xy=x$.
@@ -54,18 +65,24 @@ and decide whether it is true or false.
 
 \begin{answer}
 \begin{enumerate}[label={(\roman*)},start={3}]
-\item -enter your answer here-
-\item -enter your answer here-
+\item This case states that for every integer $m$ in the set of $\bfZ$, another intger $y$ exists that satisfies the equation $xy = x$. I would say that it is true, but it is not specific enough. We know there exists only one $y$ that satisfies the equation $xy = x$, which is $y = 1$ (Axiom 1.3).
+\item This case states that there is an integer $y$, and for each integer $m$ in $\bfZ$, $y$ satisfies the equation $xy = x$. As above, I would say this statement is true, but should be made stronger by saying "there exists a unique integer $y = 1$, which satisfies the equation $xy = x$". Alternatively, the (strong) statement could be expressed as $\exists!y \in \bfZ \colon xy = x$.
 \end{enumerate}
 \end{answer}
+
+%
+%
+% Question 3
+%
+%
 
 \newpage
 \begin{exer}
 Project 3.7. Negate the following statements.
 \begin{enumerate}[label={(\roman*)},start={4}]
-\item The newspaper article was neither accurate nor entertaining.
+\item The newspaper article was neither accurate nor entertaining. (Phrased differently: "The newspaper article was not accurate, and not entertaining.")
 \item If $\gcd(m,n)$ is odd, then $m$ or $n$ is odd.
-\item (you can enter this one)
+\item H/N is a normal subgroup of G/N if and only if H is a normal subgroup of G.
 \item For each $\varepsilon > 0$ there exists $N \in \mathbf{N}$ such that
 for all $n \geq N$, $|a_n-L| < \varepsilon$.
 \end{enumerate}
@@ -73,12 +90,18 @@ for all $n \geq N$, $|a_n-L| < \varepsilon$.
 
 \begin{answer}
 \begin{enumerate}[label={(\roman*)},start={4}]
-\item -enter your answer here-
-\item -enter your answer here-
-\item
-\item
+\item The newspaper article was either accurate, or entertaining.
+\item If $gcd(m, n)$ is even, then $m$ and $n$ are even.
+\item ... %% this is tricky, have to negate if-then twice?
+\item There exists some $\varepsilon > 0$, for all $N$ in $\bfN$, such that an $n \geq N$ exists where $|a_n - L|$ is greater than or equal to $\varepsilon$.\\ $(\exists \varepsilon > 0, \forall N \in \bfN)$ such that $(\exists n \geq N, |a_n - L| \geq \varepsilon$).
 \end{enumerate}
 \end{answer}
+
+%
+%
+% Question 4
+%
+%
 
 \newpage
 \begin{exer}
@@ -91,13 +114,24 @@ For all $k \in \mathbf{N}$, $5^k + 3$ is divisible by $4$.
 Now, prove the statement for all $k \in \mathbf{N}$, using induction.
 \end{exer}
 
-\begin{proof}
 \begin{enumerate}
 \item For $k=1$, the statement says that $5^1+3$ is divisible by $4$.
 It's true because $5+3=8$, and $8 = 4 \cdot 2$.
-\item
+\item For $k = 2$, the statement says that $5^2 + 3$ is divisible by $4$. It's true because $25 + 3 = 28$, and $28 = 4 \cdot 7$.
+\item For $k = 3$ the statement says that $5^3 + 3$ is divisible by $4$. It's true because $125 + 3 = 128$, and $128 = 4 \cdot 32$.
 \end{enumerate}
--enter your proof here-
+\begin{proof}
+We are asked to prove that for all $k \in \bfN$, $5^k + 3$ is divisible by $4$. We will show this is true using induction.
+
+Base case ($k = 1$):
+\begin{align*}
+5^1 + 3 &= 5 + 3 \\
+          &= 8 \\
+          &= 4 \cdot 2
+\end{align*}
+
+% ...
+
 \end{proof}
 
 \end{document}
