@@ -44,7 +44,7 @@ Project 3.1. Express each of the following statements using quantifiers.
 \begin{answer}
 \begin{enumerate}[label={(\roman*)},start={3}]
 \item $\forall m \in \bfZ, \exists a \in \bfZ$ and $\exists b \in \bfZ$, such that $m = a \cdot b$.
-\item There exist integers $x$ and $y$ in $\bfZ$, such that the equation $x^2 - 2y^2 = 3$.
+\item There exist integers $x$ and $y$ in $\bfZ$, such that the equation $x^2 - 2y^2 = 3$ is true.
 \end{enumerate}
 \end{answer}
 
@@ -92,8 +92,10 @@ for all $n \geq N$, $|a_n-L| < \varepsilon$.
 \begin{enumerate}[label={(\roman*)},start={4}]
 \item The newspaper article was either accurate, or entertaining.
 \item If $gcd(m, n)$ is even, then $m$ and $n$ are even.
-\item ... %% this is tricky, have to negate if-then twice?
-\item There exists some $\varepsilon > 0$, for all $N$ in $\bfN$, such that an $n \geq N$ exists where $|a_n - L|$ is greater than or equal to $\varepsilon$.\\ $(\exists \varepsilon > 0, \forall N \in \bfN)$ such that $(\exists n \geq N, |a_n - L| \geq \varepsilon$).
+\item H/N is a normal subgroup of G/N and H is not a normal subgroup of G, \emph{or} H is a normal subgroup of G and H/N is not a normal subgroup of G/N.
+\item There exists some $\varepsilon > 0$, for all $N$ in $\bfN$, such that an $n \geq N$ exists where $|a_n - L|$ is greater than or equal to $\varepsilon$. \\
+
+% $(\exists \varepsilon > 0, \forall N \in \bfN)$ such that $(\exists n \geq N, |a_n - L| \geq \varepsilon$).
 \end{enumerate}
 \end{answer}
 
@@ -127,10 +129,15 @@ Base case ($k = 1$):
 \begin{align*}
 5^1 + 3 &= 5 + 3 \\
           &= 8 \\
-          &= 4 \cdot 2
+          &= 4 \cdot 2.
 \end{align*}
 
-% ...
+We have shown that there is at least one $k \in \bfN$ that proves the statement is true. Assuming that $k \in \bfN$ is true, we will now show that $(k + 1) \in \bfN$:
+\begin{align*}
+5^{k + 1} + 3 &= (5^k \cdot 5^1) + 3 \\
+              &= 5^k \cdot 5 + 3 \\
+              &= ...
+\end{align*}
 
 \end{proof}
 
