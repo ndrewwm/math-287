@@ -1,0 +1,65 @@
+\documentclass[12pt,oneside]{amsart}
+
+\title{Math 287 Homework 4}
+\author{your name}
+\date{September 24, 2021} % the due date of the homework
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage[letterpaper,margin=1.5in]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{enumitem}
+
+% Extra space between lines
+\linespread{2.4}
+
+\theoremstyle{remark}
+\newtheorem{exer}{Exercise}
+\newtheorem{claim}{Claim}[exer]
+
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfZ}{\mathbf{Z}}
+
+\newenvironment{answer}{\bigskip\noindent\emph{Answer.}}{\hfill$\diamond$\newline}
+
+\begin{document}
+\maketitle
+
+\newpage
+\begin{exer}
+Explain the proof of Proposition 4.6(ii). The textbook gives a proof of Proposition 4.6(ii). Rewrite the proof in more detail and with more explanation.
+\end{exer}
+
+\newpage
+\begin{exer}
+Proposition 4.7(iii). For all $k \in \mathbf{N}$,
+$10^k + 3 \cdot 4^{k+2} + 5$ is divisible by $9$.
+\end{exer}
+
+\begin{proof}
+-enter your proof here-
+\end{proof}
+
+\newpage
+\begin{exer}
+Project 4.9.
+
+In this problem you will (1) determine for which natural numbers the statement is true, and (2) prove your answer. In your answer, you should state very clearly which natural numbers make the statement true: something like “For all natural numbers $k$ such that (your answer here), $k^2 < 2^k$.” Or you could phrase it differently, for example, as “If $k$ is (your answer here), $k^2 < 2^k$.” You will have to fill in what condition is needed for the $k$. Then, prove your statement.
+
+To find the right condition, please try some $k$ values. Try  $k = 1, 2, 3, ...$ (we are talking about natural numbers so it makes sense to count up from 1). Which $k$ values make
+$k^2 < 2^k$ true?
+\end{exer}
+
+\newpage
+\begin{exer}
+Find $\sum_{j = 0}^k f_j$, where the $f_j$ are Fibonacci numbers as defined in the textbook. Prove your answer.
+
+Your answer will have a clear statement: $\sum_{j = 0}^k f_j =$ (your answer). Then, a proof of your answer.
+
+Hint: Try $\sum_{j = 0}^k f_j$ for several values of $k$ (e.g., $k = 1, 2, 3, ..., 6, ...$). Look for a pattern. This is “experimental mathematics”, where you try some things, gather data, and look for a pattern!
+
+For your proof, use induction.
+\end{exer}
+
+\end{document}
