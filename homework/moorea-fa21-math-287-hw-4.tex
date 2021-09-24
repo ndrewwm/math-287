@@ -1,7 +1,7 @@
 \documentclass[12pt,oneside]{amsart}
 
 \title{Math 287 Homework 4}
-\author{your name}
+\author{Andrew Moore}
 \date{September 24, 2021} % the due date of the homework
 
 \usepackage[T1]{fontenc}
@@ -26,20 +26,58 @@
 \begin{document}
 \maketitle
 
+%
+%
+% Question 1
+%
+%
+
 \newpage
 \begin{exer}
 Explain the proof of Proposition 4.6(ii). The textbook gives a proof of Proposition 4.6(ii). Rewrite the proof in more detail and with more explanation.
 \end{exer}
 
+\begin{proof}
+I assume that we're already satisfied with the proof of Proposition 4.6(i). For Proposition 4.6(ii), we're asked to prove $b^mb^k = b^{m + k}$. We'll start by assuming that $b \in \bfZ$, and that $m \in \bfZ$ and $m \geq 0$.
+\end{proof}
+
+%
+%
+% Question 2
+%
+%
+
 \newpage
 \begin{exer}
-Proposition 4.7(iii). For all $k \in \mathbf{N}$,
-$10^k + 3 \cdot 4^{k+2} + 5$ is divisible by $9$.
+Proposition 4.7(iii). For all $k \in \bfN$, $10^k + 3 \cdot 4^{k+2} + 5$ is divisible by $9$.
 \end{exer}
 
 \begin{proof}
--enter your proof here-
+Let $P(k)$ represent the statement $10^k + 3 \cdot 4^{k+2} + 5$ is divisible by $9$. We are asked to prove that the statement is true for all $k \in \bfN$.  We will prove this statement by induction. Beginning with 1 as a base case, we have $P(k = 1)$:
+\begin{align*}
+10^k + 3 \cdot 4^{k+2} + 5 &= 10^1 + 3 \cdot 4^{1 + 2} + 5 \\
+                           &= 10 + 3 \cdot 4^3 + 5 \\
+                           &= 10 + 3 \cdot 64 + 5 \\
+                           &= 10 + 192 + 5 \\
+                           &= 207 \\
+                           &= 23 \cdot 9.
+\end{align*}
+We have shown that the statement is true for at least one $k$ in $\bfN$. Let us assume that $P(k)$ is true, i.e., $10^k + 3 \cdot 4^{k+2} + 5 = 9y$ where $y \in \bfZ$. We will now attempt to show that $P(k + 1)$ is true:
+\begin{align*}
+10^{k + 1} + 3 \cdot 4^{k + 1 + 2} + 5 &= 10^{k + 1} + 3 \cdot 4^{k + 2 + 1} + 5 \\
+                                       &= 10^k \cdot 10^1 + 3 \cdot 4^{k + 2} \cdot 4^1 + 5 \\
+                                       &= 10^1 \cdot 10^k + 3 \cdot 4^{k + 2} \cdot 4^1 + 5 \\
+                                       &= 10^1 \cdot 10^k + 3 \cdot 4^k \cdot 4^3 + 5 \\
+                                       &= 10^1 \cdot 10^k + 192 \cdot 4^k + 5
+\end{align*}
+
 \end{proof}
+
+%
+%
+% Question 3
+%
+%
 
 \newpage
 \begin{exer}
@@ -50,6 +88,12 @@ In this problem you will (1) determine for which natural numbers the statement i
 To find the right condition, please try some $k$ values. Try  $k = 1, 2, 3, ...$ (we are talking about natural numbers so it makes sense to count up from 1). Which $k$ values make
 $k^2 < 2^k$ true?
 \end{exer}
+
+%
+%
+% Question 4
+%
+%
 
 \newpage
 \begin{exer}
