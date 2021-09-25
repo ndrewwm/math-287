@@ -57,7 +57,7 @@ We assumed $P(k)$ is true (our inductive hypothesis), that is, $b^m \cdot b^k = 
 
 %
 %
-% Question 2
+% Question 2 (done)
 %
 %
 
@@ -67,7 +67,7 @@ Proposition 4.7(iii). For all $k \in \bfN$, $10^k + 3 \cdot 4^{k+2} + 5$ is divi
 \end{exer}
 
 \begin{proof}
-Let $P(k)$ represent the statement $10^k + 3 \cdot 4^{k+2} + 5$ is divisible by $9$. We are asked to prove that the statement is true for all $k \in \bfN$.  We will prove this statement by induction. Beginning with 1 as a base case, we have $P(k = 1)$:
+Let $P(k)$ represent the statement $10^k + 3 \cdot 4^{k + 2} + 5$ is divisible by $9$. We are asked to prove $P(k)$ is true for all $k \in \bfN$.  We will prove $P(k)$ by induction. Beginning with 1 as a base case, we have $P(k = 1)$:
 \begin{align*}
 10^k + 3 \cdot 4^{k+2} + 5 &= 10^1 + 3 \cdot 4^{1 + 2} + 5 \\
                            &= 10 + 3 \cdot 4^3 + 5 \\
@@ -76,14 +76,33 @@ Let $P(k)$ represent the statement $10^k + 3 \cdot 4^{k+2} + 5$ is divisible by 
                            &= 207 \\
                            &= 23 \cdot 9.
 \end{align*}
-We have shown that the statement is true for at least one $k$ in $\bfN$. Let us assume that $P(k)$ is true, i.e., $10^k + 3 \cdot 4^{k+2} + 5 = 9y$ where $y \in \bfZ$. We will now attempt to show that $P(k + 1)$ is true:
-\begin{align*}
-10^{k + 1} + 3 \cdot 4^{k + 1 + 2} + 5 &= 10^{k + 1} + 3 \cdot 4^{k + 2 + 1} + 5 \\
-                                       &= 10^k \cdot 10^1 + 3 \cdot 4^{k + 2} \cdot 4^1 + 5 \\
-                                       &= 10^1 \cdot 10^k + 3 \cdot 4^{k + 2} \cdot 4^1 + 5 \\
-                                       &= 10^1 \cdot 10^k + 3 \cdot 4^k \cdot 4^3 + 5 \\
-                                       &= 10^1 \cdot 10^k + 192 \cdot 4^k + 5
-\end{align*}
+
+Having seen $P(k)$ is true for some $k \in \bfN$, we will assume that $P(k)$ is true, and use this to prove $P(k + 1)$. This means there exists some $y \in \bfN$ such that $10^k + 3 \cdot 4^{k + 2} + 5 = 9y$. We intend to show that there exists some $z \in \bfN$, such that $10^{k + 1} + 3 \cdot 4^{k + 1 + 2} + 5 = 9z$.
+
+% \begin{align*}
+% 10^{k+1} + 3 \cdot 4^{k+1+2} + 5 &= 10 \cdot 10^k + 12 \cdot 4^{k+2} + 5 \\
+% &= (10^k + 3 \cdot 4^{k+2} + 5) + (9 \cdot 10^k + 9 \cdot 4^{k+2}) \\
+% &= 9(y + 10^k + 4^{k+2})
+% \end{align*}
+%
+% \begin{align*}
+% 10^{k + 1} + 3 \cdot 4^{k + 1 + 2} + 5 &= 10^{k + 1} + 3 \cdot 4^{k + 2 + 1} + 5 \\
+%                                        &= 10(10^k) + 3(4^3)(4^k) + 5 \\
+%                                        &= 10(5 \cdot 2)^k + 3(4^3)(2 \cdot 2)^k + 5 \\
+%                                        &= 10^1 \cdot (10^k + 3 \cdot 4^{k + 2}) \cdot 4^1 + 5 \\
+%                                        &= 10 \cdot (9y - 5) \cdot 4 + 5 \\
+%                                        &= 40(9y - 5) + 5 \\
+%                                        &= 360y - 195 \\
+%                                        &= 9(40y) - 195
+% \end{align*}
+%
+% i.e., $10^k + 3 \cdot 4^{k+2} + 5 = 9y$ where $y \in \bfZ$. We will now attempt to show that $P(k + 1)$ is true:
+% \begin{align*}
+% 10^{k + 1} + 3 \cdot 4^{k + 1 + 2} + 5 &= 10^{k + 1} + 3 \cdot 4^{k + 2 + 1} + 5 \\
+%                                        &= 10^1 \cdot 10^k + 3 \cdot 4^{k + 2} \cdot 4^1 + 5 \\
+%                                        &= 10^1 \cdot 10^k + 3 \cdot 4^k \cdot 4^3 + 5 \\
+%                                        &= 10^1 \cdot 10^k + 192 \cdot 4^k + 5
+% \end{align*}
 
 \end{proof}
 
@@ -163,9 +182,18 @@ For your proof, use induction.
 \end{exer}
 
 \begin{answer}
+A formula for the sum is $\sum_{j = 1}^k f_j = f_{j + 2} - 1$.
 
-$\sum_{j = 0}^k f_j = $
+\begin{proof}
+Let $P(j)$ represent the claim $\sum_{j = 1}^k f_j = f_{j + 2} - 1$. We will prove this claim using induction. Base case, $P(j = 1)$:
+\begin{align*}
+f_1 &= 1 \\
+f_2 &= 1 \\
+f_3 &= f_2 + f_1 = 2 \\
+\sum_{j = 1}^{1} f_j = f_3 - 1 = 2 - 1 &= 1.
+\end{align*}
 
+\end{proof}
 \end{answer}
 
 \end{document}
