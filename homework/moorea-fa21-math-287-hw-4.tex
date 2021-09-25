@@ -38,12 +38,21 @@ Explain the proof of Proposition 4.6(ii). The textbook gives a proof of Proposit
 \end{exer}
 
 \begin{proof}
-I assume that we're already satisfied with the proof of Proposition 4.6(i). For Proposition 4.6(ii), we're asked to prove $b^mb^k = b^{m + k}$. Let $P(k)$ denote the statement $b^mb^k = b^{m + k}$. We will prove $P(k)$ using induction, assuming $k \geq 0$. We'll start by assuming that $b \in \bfZ$, and that $m \in \bfZ_{\geq 0}$.
+Let $P(k)$ denote the statement $b^mb^k = b^{m + k}$. We will prove $P(k)$ using induction, assuming $k, m \in \bfZ_{\geq 0}$, such that $k,m \geq 0$. We also assume $b \in \bfZ$.
 
-We will first examine the base case $P(k = 0)$. By definition, we know that $b^0 = 1$. This means we can rewrite $P(k = 0)$ as:
+We will first examine the base case $P(k = 0)$. By definition, we know that $b^0 = 1$. Below we will show that both sides of the base case can be made to equal $b^m$:
 \begin{align*}
-b^m \cdot 1 &= b^m \cdot b^0 &=
+b^m \cdot b^0 = b^m \cdot 1 &= b^m \tag{by Axiom 1.3} \\
+                  b^{m + 0} &= b^m. \tag{combining the exponents, m + 0 = m}
 \end{align*}
+
+We now know $P(k)$ is true for \emph{some} $k$. We will now assume $P(k)$ is true, and use this to prove that $P(k + 1)$ is also true. That is, we intend to conclude that $b^mb^{n + 1} = b^{m + n + 1}$. We will now use the definition of powers to rearrange the left and right-hand sides of the equation:
+\begin{align*}
+ b^mb^{k + 1} &= b^m \cdot b^k \cdot b \\
+b^{m + k + 1} &= b^{m + k} \cdot b.
+\end{align*}
+
+We assumed $P(k)$ is true (our inductive hypothesis), that is, $b^m \cdot b^k = b^{m + k}$. With this assumption in place, it is clear the left and right-hand sides are equal. This concludes our proof.
 \end{proof}
 
 %
@@ -80,7 +89,7 @@ We have shown that the statement is true for at least one $k$ in $\bfN$. Let us 
 
 %
 %
-% Question 3
+% Question 3 (done)
 %
 %
 
@@ -152,5 +161,11 @@ Hint: Try $\sum_{j = 0}^k f_j$ for several values of $k$ (e.g., $k = 1, 2, 3, ..
 
 For your proof, use induction.
 \end{exer}
+
+\begin{answer}
+
+$\sum_{j = 0}^k f_j = $
+
+\end{answer}
 
 \end{document}
