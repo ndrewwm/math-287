@@ -2,7 +2,7 @@
 
 \title{Math 287 Homework 5}
 \author{Andrew Moore}
-\date{October 10, 2021} % the due date of the homework
+\date{October 1, 2021} % the due date of the homework
 
 \usepackage[T1]{fontenc}
 \usepackage{amsmath,amsfonts,amssymb,amsthm}
@@ -40,13 +40,15 @@ Show some of your favorite equations in \emph{inline} and \textbf{display} mathe
 Some people like small equations such as $e^{\pi i}+1 = 0$
 or \( a^2+b^2 = c^2 \).
 
-My favorite small equation is $...$.
+My favorite small equation is $A^TA\textbf{x} = A^T\textbf{b}$.
 
 Other people like big equations like $$ x = \frac{-b \pm \sqrt{b^2-4ac}}{2a} $$
 and \[ \int x^n \, dx = \frac{1}{n+1} x^{n+1} + C . \]
 
 My favorite big equation is
-\[ ... \]
+$$
+\lim_{x \to 0} \frac{sin(x)}{x} = 1
+$$
 \end{answer}
 
 %
@@ -56,15 +58,54 @@ My favorite big equation is
 %
 \newpage
 \begin{exer}
-Project 5.16(ii). Prove or give a counterexample: For all sets $A,B,C$,
-$A \cap (B-C) = (A \cap B) - (A \cap C)$.
+Project 5.16(ii). Prove or give a counterexample: For all sets $A, B, C$, $A \cap (B - C) = (A \cap B) - (A \cap C)$.
 \end{exer}
+
+% A = {1, 2, 3, 4, 5}
+% B = {2, 3, 4}
+% C = {4, 5, 6}
+
+% A int (B - C) =
+% {1, 2, 3, 4, 5} int {2, 3} = {2, 3}
+
+% (A int B) - (A int C)
+% {2, 3, 4} - {4, 5} = {2, 3}
+
+% feel like this is true...
 
 % The symbol for intersection of sets is typed \cap.
 % The symbol for union of sets is typed \cup.
-
 \begin{answer}
--enter your answer here-
+I claim that this statement is true.
+
+\begin{proof}
+Take an element on the left-hand side, called $x$, we can see that
+\begin{align*}
+&x \in A \tag{because $x \in A \cap (B - C)$} \\
+&\Rightarrow  x \in (B - C) \tag{definition of $\cap$} \\
+&\Rightarrow (x \in B) \wedge (x \notin C) \tag{definition of $-$} \\
+&\Rightarrow (x \in A \cap B) \wedge (x \notin A \cap C) \\
+&\Rightarrow x \in (A \cap B) - (A \cap C) \\
+&\Rightarrow A \cap (B - C) \subseteq (A \cap B) - (A \cap C).
+\end{align*}
+
+Then, taking an element $y$ on the right-hand side, we have
+\begin{align*}
+&(y \in A \cap B) \wedge (y \notin A \cap C) \tag{definition of $-$} \\
+&\Rightarrow (y \in A) \wedge (y \in B) \wedge (y \notin C) \tag{definition of $\cap$} \\
+&\Rightarrow y \in (B - C) \\
+&\Rightarrow y \in A \cap (B - C) \\
+&\Rightarrow (A \cap B) - (A \cap C) \subseteq A \cap (B - C).
+\end{align*}
+
+Thus we have shown that
+\begin{align*}
+A \cap (B - C) &\subseteq (A \cap B) - (A \cap C) \\
+(A \cap B) - (A \cap C) &\subseteq A \cap (B - C)
+\end{align*}
+
+which means that $A \cap (B - C) = (A \cap B) - (A \cap C)$.
+\end{proof}
 \end{answer}
 
 %
@@ -72,15 +113,21 @@ $A \cap (B-C) = (A \cap B) - (A \cap C)$.
 % Question 3
 %
 %
+\newpage
 \begin{exer}
-Proposition 5.20(ii).
+Proposition 5.20(ii). If $A, B, C$ are any sets, then $A \times (B \cap C) = (A \times B) \cap (A \times C)$.
 \end{exer}
+
+\begin{proof}
+Take an element $x$ on the left-hand side. We know $x \in A$, because we are taking the cross product of $A$ and $B \cap C$. This also tells us that $x \in B \cap C$.
+\end{proof}
 
 %
 %
 % Question 4
 %
 %
+\newpage
 \begin{exer}
 Project 5.21(ii).
 
@@ -92,6 +139,7 @@ Project 5.21(ii).
 % Question 5
 %
 %
+\newpage
 \begin{exer}
 Find $\sum_{j = 0}^k f^2_j$ = (your answer), where the are Fibonacci numbers as defined in the textbook. Prove your answer.
 
@@ -103,5 +151,30 @@ For example, since the Fibonacci numbers start with , you will get values starti
 
 Hint: Work out some of the values and look for a pattern. It might be helpful to look at factorizations of the values.
 \end{exer}
+
+\begin{answer}
+After inspecting the series/summation, I propose that
+
+$$
+\sum_{j = 0}^{k} f^2_j = f_k \cdot f_{k + 1}
+$$
+
+for $k \geq 1$.
+
+\begin{proof}
+Let $P(k)$ be defined as $\sum_{j = 0}^{k} f^2_j = f_k \cdot f_{k + 1}$ for $k \geq 1$. As a base case, we will examine $P(1)$:
+
+\begin{align*}
+\sum_{j = 0}^1 f^2_j = 0^2 + 1^2 = 0 + 1 &= 1 \\
+f_1 \cdot f_{2} = 1 \cdot 1 &= 1.
+\end{align*}
+
+We know $P(k)$ is true for some $k$. Let us assume $P(k)$ is true, and use this to show that $P(k + 1)$ is also true. That is, we intend to show that $P(k + 1)$,
+$$
+\sum_{j = 0}^{k + 1} f^2_j = f_{k + 1} \cdot f_{k + 2}
+$$ is true.
+\end{proof}
+
+\end{answer}
 
 \end{document}
