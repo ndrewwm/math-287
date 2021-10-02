@@ -111,7 +111,7 @@ which means that $A \cap (B - C) = (A \cap B) - (A \cap C)$.
 
 %
 %
-% Question 3
+% Question 3 (done)
 %
 %
 \newpage
@@ -120,7 +120,31 @@ Proposition 5.20(ii). If $A, B, C$ are any sets, then $A \times (B \cap C) = (A 
 \end{exer}
 
 \begin{proof}
-Take an element $x$ on the left-hand side. We know $x \in A$, because we are taking the cross product of $A$ and $B \cap C$. This also tells us that $x \in B \cap C$.
+Take an element $x$ on the left-hand side. We'll also use $i$, and $j$ to represent the ordered pair $(i, j)$ that $x$ constitutes. We can see that
+\begin{align*}
+i &\in A \tag{definition of $\times$} \\
+j &\in B \cap C \Rightarrow (j \in B) \wedge (j \in C). \tag{definition of $\cap$}
+\end{align*}
+
+By the definition of $\times$, we know that
+\begin{align*}
+(i, j) \in A \times B \Rightarrow x \in A \times B \\
+(i, j) \in A \times C \Rightarrow x \in A \times C.
+\end{align*} This means we can say that $x \in (A \times B) \cap (A \times C)$ and therefore, \[ A \times (B \cap C) \subseteq (A \times B) \cap (A \times C). \]
+
+Now we will examine an element $y$ from the right-hand side. We will use $k$, and $l$ to represent the ordered pair $(k, l)$ that $y$ constitutes. From the definition of $\cap$, we know that $(y \in A \times B) \wedge (y \in A \times C)$. We also know from the definition of $\times$ that
+\begin{align*}
+&(k, l) \in A \times B \Rightarrow (k \in A) \wedge (l \in B) \\
+&(k, l) \in A \times B \Rightarrow l \in C.
+\end{align*}
+
+This means that $l \in B \cap C$. This means we can say \[ (k, l) \in A \times (B \cap C), \] i.e., $y \in A \times (B \cap C)$. From this we can conclude that \[ (A \times B) \cap (A \times C) \subseteq A \times (B \cap C). \]
+
+To summarize, we have shown
+\begin{align*}
+A \times (B \cap C) &\subseteq (A \times B) \cap (A \times C) \\
+(A \times B) \cap (A \times C) &\subseteq A \times (B \cap C)
+\end{align*} and therefore \[ A \times (B \cap C) = (A \times B) \cap (A \times C). \]
 \end{proof}
 
 %
