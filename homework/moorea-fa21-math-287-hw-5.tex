@@ -62,25 +62,11 @@ $$
 Project 5.16(ii). Prove or give a counterexample: For all sets $A, B, C$, $A \cap (B - C) = (A \cap B) - (A \cap C)$.
 \end{exer}
 
-% A = {1, 2, 3, 4, 5}
-% B = {2, 3, 4}
-% C = {4, 5, 6}
-
-% A int (B - C) =
-% {1, 2, 3, 4, 5} int {2, 3} = {2, 3}
-
-% (A int B) - (A int C)
-% {2, 3, 4} - {4, 5} = {2, 3}
-
-% feel like this is true...
-
-% The symbol for intersection of sets is typed \cap.
-% The symbol for union of sets is typed \cup.
 \begin{answer}
 I claim that this statement is true.
 
 \begin{proof}
-Take an element on the left-hand side, called $x$, we can see that
+Taking an element on the left-hand side, called $x$, we can see that
 \begin{align*}
 &x \in A \tag{because $x \in A \cap (B - C)$} \\
 &\Rightarrow  x \in (B - C) \tag{definition of $\cap$} \\
@@ -99,12 +85,11 @@ Then, taking an element $y$ on the right-hand side, we have
 &\Rightarrow (A \cap B) - (A \cap C) \subseteq A \cap (B - C).
 \end{align*}
 
-Thus we have shown that
+Thus, we have shown that
 \begin{align*}
 A \cap (B - C) &\subseteq (A \cap B) - (A \cap C) \\
 (A \cap B) - (A \cap C) &\subseteq A \cap (B - C)
 \end{align*}
-
 which means that $A \cap (B - C) = (A \cap B) - (A \cap C)$.
 \end{proof}
 \end{answer}
@@ -149,15 +134,37 @@ A \times (B \cap C) &\subseteq (A \times B) \cap (A \times C) \\
 
 %
 %
-% Question 4
+% Question 4 (done)
 %
 %
 \newpage
 \begin{exer}
-Project 5.21(ii).
-
-(Prove or disprove. If you believe the equation is true, give a proof. If you believe it is not true for all sets, give a counterexample. You can try making up some random sets and working out each side of the equation to see if they match or not.)
+Project 5.21(ii). $(A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D).$ % (Prove or disprove. If you believe the equation is true, give a proof. If you believe it is not true for all sets, give a counterexample. You can try making up some random sets and working out each side of the equation to see if they match or not.)
 \end{exer}
+
+\begin{answer}
+I claim this statement is true.
+
+\begin{proof}
+Take an element $x$ on the left-hand side. We will use $i$ and $j$ to represent the ordered pair $(i, j)$ that $x$ denotes. We can see that
+\begin{align*}
+&x \in A \times B \Rightarrow (i, j) \in A \times B \Rightarrow (i \in A) \wedge (j \in B) \\
+&x \in C \times D \Rightarrow (i, j) \in C \times D \Rightarrow (i \in C) \wedge (j \in D).
+\end{align*} This means that $i \in A \cap C$ and $j \in B \cap D$. This implies that the ordered pair $(i, j)$ is an element of $(A \cap C) \times (B \cap D).$ So, $x \in (A \cap C) \times (B \cap D)$. We can then conclude \[ (A \times B) \cap (C \times D) \subseteq (A \cap C) \times (B \cap D). \]
+
+Now we will examine an element $y$ on the right-hand side. We will use $k$ and $l$ to the ordered pair $(k, l)$ that $y$ denotes. We can see that
+\begin{align*}
+&k \in A \cap C \Rightarrow (k \in A) \wedge (k \in C) \\
+&l \in B \cap D \Rightarrow (l \in B) \wedge (l \in D).
+\end{align*} This means that $(k, l) \in A \times B$ and $(k, l) \in C \times D$ and thus, $(k, l) \in (A \times B) \cap (C \times D)$. That is, \[ y \in (A \times B) \cap (C \times D). \] We can then conclude \[ (A \cap C) \times (B \cap D) \subseteq (A \times B) \cap (C \times D). \]
+
+We have shown that
+\begin{align*}
+(A \times B) \cap (C \times D) &\subseteq (A \cap C) \times (B \cap D) \\
+(A \cap C) \times (B \cap D) &\subseteq (A \times B) \cap (C \times D),
+\end{align*} and therefore \[ (A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D). \]
+\end{proof}
+\end{answer}
 
 %
 %
