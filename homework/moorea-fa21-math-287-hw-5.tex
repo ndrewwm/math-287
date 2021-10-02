@@ -168,20 +168,18 @@ We have shown that
 
 %
 %
-% Question 5
+% Question 5 (done)
 %
 %
 \newpage
 \begin{exer}
-Find $\sum_{j = 0}^k f^2_j$ = (your answer), where the are Fibonacci numbers as defined in the textbook. Prove your answer.
-
-Your answer will have a clear statement: (your answer). Then, a proof of your answer.
-
-For your proof, use induction.
-
-For example, since the Fibonacci numbers start with , you will get values starting with 0, 1, 1, 2, 3, 5, 8, ..., you will get values starting with $0^2 = 0, 0^2 + 1^2 = 1, 1^2 + 1^2 = 2, 1^2 + 1^2 + 2^2 = 6$, and so on.
-
-Hint: Work out some of the values and look for a pattern. It might be helpful to look at factorizations of the values.
+Find $\sum_{j = 0}^k f^2_j$ = (your answer), where the are Fibonacci numbers as defined in the textbook. Prove your answer. % Your answer will have a clear statement: (your answer). Then, a proof of your answer.
+%
+% For your proof, use induction.
+%
+% For example, since the Fibonacci numbers start with , you will get values starting with 0, 1, 1, 2, 3, 5, 8, ..., you will get values starting with $0^2 = 0, 0^2 + 1^2 = 1, 1^2 + 1^2 = 2, 1^2 + 1^2 + 2^2 = 6$, and so on.
+%
+% Hint: Work out some of the values and look for a pattern. It might be helpful to look at factorizations of the values.
 \end{exer}
 
 \begin{answer}
@@ -191,10 +189,10 @@ $$
 \sum_{j = 0}^{k} f^2_j = f_k \cdot f_{k + 1}
 $$
 
-for $k \geq 1$.
+for all $k \geq 1$ ($k \in \bfN$).
 
 \begin{proof}
-Let $P(k)$ be defined as $\sum_{j = 0}^{k} f^2_j = f_k \cdot f_{k + 1}$ for $k \geq 1$. As a base case, we will examine $P(1)$:
+Let $P(k)$ be defined as $\sum_{j = 0}^{k} f^2_j = f_k \cdot f_{k + 1}$ for all $k \in \bfN$ such that $k \geq 1$. As a base case, we will examine $P(1)$:
 
 \begin{align*}
 \sum_{j = 0}^1 f^2_j = 0^2 + 1^2 = 0 + 1 &= 1 \\
@@ -204,7 +202,15 @@ f_1 \cdot f_{2} = 1 \cdot 1 &= 1.
 We know $P(k)$ is true for some $k$. Let us assume $P(k)$ is true, and use this to show that $P(k + 1)$ is also true. That is, we intend to show that $P(k + 1)$,
 $$
 \sum_{j = 0}^{k + 1} f^2_j = f_{k + 1} \cdot f_{k + 2}
-$$ is true.
+$$ is true. Re-expressing the sum, we can show
+\begin{align*}
+\sum_{j = 0}^{k + 1} f^2_j &= \sum_{j = 0}^{k} f^2_j + f^2_{k + 1} \tag{sum to k, plus result of $f^2_{k + 1}$} \\
+                           &= f_k \cdot f_{k + 1} + f^2_{k + 1} \tag{the inductive hypothesis, plus 1} \\
+                           &= f_{k + 1} (f_k \cdot 1 + f_{k + 1}) \tag{factor out $f_{k + 1}$} \\
+                           &= f_{k + 1} (f_k + f_{k + 1}) \\
+                           &= f_{k + 1} (f_{k + 2}) \tag{adding two Fibonacci numbers together} \\
+                           &= f_{k + 1} \cdot f_{k + 2}.
+\end{align*} We have shown $P(k + 1)$ is true, which concludes our induction, and the proof.
 \end{proof}
 
 \end{answer}
