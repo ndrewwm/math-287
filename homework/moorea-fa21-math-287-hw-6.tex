@@ -29,7 +29,7 @@
 
 %
 %
-% Question 1
+% Question 1 (done)
 %
 %
 \newpage
@@ -41,16 +41,13 @@ Let $f(x) = x^2$.
 Using the limit definition of derivative, we have
 \begin{equation}
 \begin{split}
-  \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} &= ? \\
-    &= ? \\
-    &= ? \\
-    &= ? \\
-    &= ? \\
-    &= ? \\
-    &= ? \\
-    &= ? \\
-    &= ? \\
-    &= ?
+  \lim_{h \to 0} \frac{f(x+h) - f(x)}{h} &= \lim_{h \to 0} \frac{(x + h)^2 - x^2}{h} \\
+                                         &= \lim_{h \to 0} \frac{x^2 - x^2 + 2xh + h^2}{h} \\
+                                         &= \lim_{h \to 0} \frac{2xh + h^2}{h} \\
+                                         &= \lim_{h \to 0} \frac{2xh}{h} + \frac{h^2}{h} \\
+                                         &= \lim_{h \to 0} 2x + h \\
+                                         &= 2x + 0 \\
+                                         &= 2x.
 \end{split}
 \end{equation}
 \end{proof}
@@ -62,24 +59,47 @@ Using the limit definition of derivative, we have
 %
 \newpage
 \begin{exer}
-Project 6.9(i), transitive. Prove that the relation defined in the book is transitive.
+Project 6.9. On $\bfZ \times (\bfZ - \{0\})$ we define the relation $(m_1, n_1) \sim (m_2, n_2)$ if $m_1n_2 = n_1m_2$. Prove that the relation defined in the book is transitive.
+% There is one step in the middle of the proof where you will use the fact that the set is Z x (Z - {0}), meaning that we are looking at pairs (m, n) where n != 0. When you get to that step, in other words when you use the fact that n != 0, please highlight that and state it clearly. Say why it matters that n != 0.
 %
-% There is one step in the middle of the proof where you will use the fact that the set is , meaning that we are looking at pairs  where . When you get to that step, in other words when you use the fact that , please highlight that and state it clearly. Say why it matters that .
+% (Hint: It’s because there’s a step where we divide by n, but we can’t divide by 0. So, knowing n != 0 is important. Please show which step that is, and explain it in your own words.)
 %
-% (Hint: It’s because there’s a step where we divide by , but we can’t divide by . So, knowing  is important. Please show which step that is, and explain it in your own words.)
-%
-% LaTeX: The symbol that the book uses for the relation, , is typed \sim (short for “similar”).
+% LaTeX: The symbol that the book uses for the relation, ~, is typed \sim (short for “similar”).
 \end{exer}
+
+\begin{proof}
+% A relation, $\sim$, is considered \emph{transitive} if for some arbitrary $a, b, c$ within $A \times
+\end{proof}
 
 %
 %
-% Question 3
+% Question 3 (done?)
 %
 %
 \newpage
 \begin{exer}
-Proposition 6.17.
+Prop. 6.17. Let $m \in \bfZ$. This number $m$ is even, iff $m^2$ is even.
 \end{exer}
+
+% P(k) = m is even
+% P(q) = m^2 is even
+% k <=> q === (p => q) & (-p => -q)
+% k <=> q === (p => q) & (q => p)
+%
+% p   q  p -> q -p -> -q  q -> p
+% T   F    F       T        T
+% T   T    T       T        T
+% F   F    T       T        T
+% F   T    T       F        F
+\begin{proof}
+Assume that $m$ is even, i.e. $2 \mid m$. This means that $m = 2n$ for some $n \in \bfZ$. So, by the definition of powers we can write \[ m^2 = (2n)^2 = 4n^2 = 2 \cdot (2n^2). \] Because $n$ is an integer, the term $2n^2$ is also an integer, and since it is being multiplied by 2, we know the product is even.
+
+Conversely, assume that $m$ is not even. This means that $m$ is odd, and we can write $m = 2q + 1$ for some $q \in \bfZ$. Again, by the definition of powers we have \[ m^2 = (2q + 1)^2 = 4q^2 + 4q + 1 = 2(2q^2 + 2q) + 1. \]
+
+Let $z = (2q^2 + 2q)$. We know that the integers are closed under multiplication, and thus the product of $2z$ is also an integer. Therefore, we have \[ m^2 = 2z +1, \] which we know must be odd (Proposition 6.15).
+
+We have shown that if $m$ is even, $m^2$ must also be even. Additionally, we have shown that if $m$ is odd, $m^2$ must also be odd. This means that $m$ is even if and only if $m^2$ is even.
+\end{proof}
 
 %
 %
@@ -90,5 +110,9 @@ Proposition 6.17.
 \begin{exer}
 Explain the proof of Proposition 6.29(i). The textbook gives a proof of Proposition 6.29(i). Rewrite the proof in more detail and with more explanation.
 \end{exer}
+% Let  m,n \in Z. (i) gcd(m,n) divides both m and n.
+
+\begin{answer}
+\end{answer}
 
 \end{document}
