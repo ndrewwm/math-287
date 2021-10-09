@@ -96,23 +96,23 @@ Notice that we can we can redefine $b_1$ as
 \begin{equation}
 \begin{split}
 b_1c_2 &= c_1b_2 \\
-b_1 &= \frac{c_1b_2}{c_2}.
+   b_1 &= \frac{c_1b_2}{c_2}.
 \end{split}
 \end{equation}
 
 This is permissible because the set that our relation is defined upon explicitly ensures that $a_2, b_2, c_2 \neq 0$, (i.e., our set is $\{(m, n) \in \bfZ \times (\bfZ - \{0\})\}$). Then, substituting the new definition of $b_1$ into $a \sim b$, we have:
 \begin{equation}
 \begin{split}
-a &\sim b \\
+     a &\sim b \\
 a_1b_2 &= b_1a_2 \\
 a_1b_2 &= (\frac{c_1b_2}{c_2})a_2 \text{ (replacing $b_1$)} \\
 a_1b_2c_2 &= c_1b_2a_2 \text{ (multiplying by $c_2$ allowed $\because c_2 \neq 0$)} \\
 a_1c_2 &= c_1a_2 \text{ (we can cancel $b_2$ here $\because b_2 \neq 0$)} \\
-a &\sim c.
+     a &\sim c.
 \end{split}
 \end{equation}
 
-Thus, we have shown that $a_1b_2 = (\frac{c_1b_2}{c_2})a_2 = b_1a_2$. We know this is possible because of our assumptions ($a_1b_2 = b_1a_2$ and $b_1c_2 = c_1b_2$), i.e. $a \sim b$ and $b \sim c$. Thus, we can conclude that $a \sim c$.
+Thus, we have shown that $a_1b_2 = (\frac{c_1b_2}{c_2})a_2 = b_1a_2$. We know this is possible because of our assumptions ($a_1b_2 = b_1a_2$ and $b_1c_2 = c_1b_2$), i.e. $a \sim b$ and $b \sim c$. Thus, we can conclude that $a \sim c$, which means the relation is transitive.
 \end{proof}
 
 %
@@ -147,7 +147,7 @@ We have shown that if $m$ is even, $m^2$ must also be even. Additionally, we hav
 
 %
 %
-% Question 4
+% Question 4 (done)
 %
 %
 \newpage
@@ -159,7 +159,22 @@ Explain the proof of Proposition 6.29(i): $gcd(m, n)$ divides both $m$ and $n$. 
 \begin{answer}
 This proposition formally defines the \textbf{greatest common divisor} of two arbitrary integers (referred to as $m$ and $n$) as a concept. Its first item, (i) establishes that the greatest common divisor ("gcd") divides both $m$ and $n$. This is a necessary precondition for being the \emph{largest} divisor of both $m$ and $n$.
 \begin{proof}
-Let $g = gcd(m, n)$, i.e., $g$ is the smallest element of \[ S = \{k \in \bfN : k = mx + ny \text{ for some } x,y \in \bfZ \}. \] If $m = n = 0$, then $g = 0$ and the statement (Proposition 6.29(i)) holds. If $m = 0$ and $n \neq 0$ then \[ S = \{ |n|y : y \in \bfN \} \] and $g = |n|$, which satisfies (i). The case of $m \neq 0$, and $n = 0$ is analogous.
+Let $g = gcd(m, n)$, i.e., $g$ is the smallest element of \[ S = \{k \in \bfN : k = mx + ny \text{ for some } x,y \in \bfZ \}. \] If $m = n = 0$, then $g = 0$ (because $0 = (0)x + (0)y$) and the statement holds. If $m = 0$ and $n \neq 0$ then \[ S = \{ |n|y : y \in \bfN \} \] and $g = |n|$, which satisfies (i). Rephrased, this means that if $m = 0$ and $n \neq 0$ the absolute value of $n$ must be larger than $m$. The case of $m \neq 0$, and $n = 0$ is analogous.
+
+Now, we'll examine cases where $m,n \neq 0$. $S$ will be unchanged if $m$ or $n$ are negative, (because we didn't require $x$ and $y$ to be positive or negative), so to simplify, we'll assume $m$ and $n$ are positive.
+
+For the sake of contradiction, suppose that $g$ does not divide $m$. By the Division Algorithm, there exist $q,r \in \bfZ$ such that \[ m = qg + r \text{ and } 0 < r < g. \] That is, $r$ is bigger than 0, and is smaller than $g$. By our definition of $g$, $g = mx + ny$ for some $x,y \in \bfZ$. So, rearranging terms we have
+\begin{equation}
+\begin{split}
+r &= m - qg \\
+  &= m - q(mx + ny) \\
+  &= m - qmx - qny \text{ (distributing)} \\
+  &= (m - qmx) - qny \\
+  &= m(1 - qx) + n(-qy).
+\end{split}
+\end{equation}
+
+This implies that $r \in S$. However, we posited that $g$ does not divide $m$, therefore $0 < r < g$, but this contradicts the fact that $g$ is the smallest element of $S$. Therefore $g$ must divide $m$. The same argument can be applied with $n$ to show that $g$ divides $n$.
 \end{proof}
 \end{answer}
 
