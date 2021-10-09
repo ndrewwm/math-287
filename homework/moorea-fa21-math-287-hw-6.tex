@@ -92,7 +92,27 @@ We intend to show
 \end{split}
 \end{equation}
 
+Notice that we can we can redefine $b_1$ as
+\begin{equation}
+\begin{split}
+b_1c_2 &= c_1b_2 \\
+b_1 &= \frac{c_1b_2}{c_2}.
+\end{split}
+\end{equation}
 
+This is permissible because the set that our relation is defined upon explicitly ensures that $a_2, b_2, c_2 \neq 0$, (i.e., our set is $\{(m, n) \in \bfZ \times (\bfZ - \{0\})\}$). Then, substituting the new definition of $b_1$ into $a \sim b$, we have:
+\begin{equation}
+\begin{split}
+a &\sim b \\
+a_1b_2 &= b_1a_2 \\
+a_1b_2 &= (\frac{c_1b_2}{c_2})a_2 \\
+a_1b_2c_2 &= c_1b_2a_2 \\
+a_1c_2 &= c_1a_2 \text{ (we can cancel $b_2$ here $\because b_2 \neq 0$)} \\
+a &\sim c.
+\end{split}
+\end{equation}
+
+Thus, we have shown that $a_1b_2 = (\frac{c_1b_2}{c_2})a_2 = b_1a_2$. We know this is possible because of our assumptions ($a_1b_2 = b_1a_2$ and $b_1c_2 = c_1b_2$), i.e. $a \sim b$ and $b \sim c$. Thus, we can conclude that $a \sim c$.
 \end{proof}
 
 %
