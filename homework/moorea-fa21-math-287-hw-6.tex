@@ -54,7 +54,7 @@ Using the limit definition of derivative, we have
 
 %
 %
-% Question 2
+% Question 2 (done)
 %
 %
 \newpage
@@ -105,8 +105,8 @@ This is permissible because the set that our relation is defined upon explicitly
 \begin{split}
 a &\sim b \\
 a_1b_2 &= b_1a_2 \\
-a_1b_2 &= (\frac{c_1b_2}{c_2})a_2 \\
-a_1b_2c_2 &= c_1b_2a_2 \\
+a_1b_2 &= (\frac{c_1b_2}{c_2})a_2 \text{ (replacing $b_1$)} \\
+a_1b_2c_2 &= c_1b_2a_2 \text{ (multiplying by $c_2$ allowed $\because c_2 \neq 0$)} \\
 a_1c_2 &= c_1a_2 \text{ (we can cancel $b_2$ here $\because b_2 \neq 0$)} \\
 a &\sim c.
 \end{split}
@@ -117,7 +117,7 @@ Thus, we have shown that $a_1b_2 = (\frac{c_1b_2}{c_2})a_2 = b_1a_2$. We know th
 
 %
 %
-% Question 3 (done?)
+% Question 3 (done)
 %
 %
 \newpage
@@ -156,8 +156,11 @@ Explain the proof of Proposition 6.29(i): $gcd(m, n)$ divides both $m$ and $n$. 
 \end{exer}
 % Let  m,n \in Z. (i) gcd(m,n) divides both m and n.
 
+\begin{answer}
+This proposition formally defines the \textbf{greatest common divisor} of two arbitrary integers (referred to as $m$ and $n$) as a concept. Its first item, (i) establishes that the greatest common divisor ("gcd") divides both $m$ and $n$. This is a necessary precondition for being the \emph{largest} divisor of both $m$ and $n$.
 \begin{proof}
 Let $g = gcd(m, n)$, i.e., $g$ is the smallest element of \[ S = \{k \in \bfN : k = mx + ny \text{ for some } x,y \in \bfZ \}. \] If $m = n = 0$, then $g = 0$ and the statement (Proposition 6.29(i)) holds. If $m = 0$ and $n \neq 0$ then \[ S = \{ |n|y : y \in \bfN \} \] and $g = |n|$, which satisfies (i). The case of $m \neq 0$, and $n = 0$ is analogous.
 \end{proof}
+\end{answer}
 
 \end{document}
