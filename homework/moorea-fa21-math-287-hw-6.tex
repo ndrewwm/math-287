@@ -68,7 +68,31 @@ Project 6.9. On $\bfZ \times (\bfZ - \{0\})$ we define the relation $(m_1, n_1) 
 \end{exer}
 
 \begin{proof}
-% A relation, $\sim$, is considered \emph{transitive} if for some arbitrary $a, b, c$ within $A \times
+Let $a, b, c \in \bfZ \times (\bfZ - \{0\})$, and let $a = (a_1, a_2)$, $b = (b_1, b_2)$, and $c = (c_1, c_2)$. We intend to show that if $a \sim b$ and $b \sim c$, then $a \sim c$. In this case, the relation $\sim$, is defined as $m_1n_2 = n_1m_2$. Let us assume that $a \sim b$ and $b \sim c$. That is,
+\begin{equation}
+\begin{split}
+         a &\sim b \\
+(a_1, a_2) &\sim (b_1, b_2) \\
+    a_1b_2 &= b_1a_2
+\end{split}
+\quad\text{ and }
+\begin{split}
+         b &\sim c \\
+(b_1, b_2) &\sim (c_1, c_2) \\
+    b_1c_2 &= c_1b_2.
+\end{split}
+\end{equation}
+
+We intend to show
+\begin{equation}
+\begin{split}
+         a &\sim c \\
+(a_1, a_2) &\sim (c_1, c_2) \\
+    a_1c_2 &= c_1a_2.
+\end{split}
+\end{equation}
+
+
 \end{proof}
 
 %
@@ -92,7 +116,7 @@ Prop. 6.17. Let $m \in \bfZ$. This number $m$ is even, iff $m^2$ is even.
 % F   F    T       T        T
 % F   T    T       F        F
 \begin{proof}
-Assume that $m$ is even, i.e. $2 \mid m$. This means that $m = 2n$ for some $n \in \bfZ$. So, by the definition of powers we can write \[ m^2 = (2n)^2 = 4n^2 = 2 \cdot (2n^2). \] Because $n$ is an integer, the term $2n^2$ is also an integer, and since it is being multiplied by 2, we know the product is even.
+Assume that $m$ is even, i.e. $2 \mid m$. This means that $m = 2n$ for some $n \in \bfZ$. So, by the definition of powers we can write \[ m^2 = m \cdot m = (2n) \cdot (2n) = (2n)^2 = 4n^2 = 2 \cdot (2n^2). \] Because $n$ is an integer, the term $2n^2$ is also an integer, and since it is being multiplied by 2, we know the product is even.
 
 Conversely, assume that $m$ is not even. This means that $m$ is odd, and we can write $m = 2q + 1$ for some $q \in \bfZ$. Again, by the definition of powers we have \[ m^2 = (2q + 1)^2 = 4q^2 + 4q + 1 = 2(2q^2 + 2q) + 1. \]
 
@@ -108,11 +132,12 @@ We have shown that if $m$ is even, $m^2$ must also be even. Additionally, we hav
 %
 \newpage
 \begin{exer}
-Explain the proof of Proposition 6.29(i). The textbook gives a proof of Proposition 6.29(i). Rewrite the proof in more detail and with more explanation.
+Explain the proof of Proposition 6.29(i): $gcd(m, n)$ divides both $m$ and $n$. Let $m,n \in \bfZ$. % The textbook gives a proof of Proposition 6.29(i). Rewrite the proof in more detail and with more explanation.
 \end{exer}
 % Let  m,n \in Z. (i) gcd(m,n) divides both m and n.
 
-\begin{answer}
-\end{answer}
+\begin{proof}
+Let $g = gcd(m, n)$, i.e., $g$ is the smallest element of \[ S = \{k \in \bfN : k = mx + ny \text{ for some } x,y \in \bfZ \}. \] If $m = n = 0$, then $g = 0$ and the statement (Proposition 6.29(i)) holds. If $m = 0$ and $n \neq 0$ then \[ S = \{ |n|y : y \in \bfN \} \] and $g = |n|$, which satisfies (i). The case of $m \neq 0$, and $n = 0$ is analogous.
+\end{proof}
 
 \end{document}
