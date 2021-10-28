@@ -1,0 +1,71 @@
+\documentclass[12pt,oneside]{amsart}
+
+\title{Math 287 Homework 7}
+\author{Andrew Moore}
+\date{October 29, 2021} % the due date of the homework
+
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amsfonts,amssymb,amsthm}
+\usepackage[letterpaper,margin=1.5in]{geometry}
+\usepackage{fancyhdr}
+\pagestyle{fancy}
+\usepackage{enumitem}
+
+% Extra space between lines
+\linespread{2.4}
+
+\theoremstyle{remark}
+\newtheorem{exer}{Exercise}
+\newtheorem{claim}{Claim}[exer]
+
+\newcommand{\bfN}{\mathbf{N}}
+\newcommand{\bfZ}{\mathbf{Z}}
+\newcommand{\bfR}{\mathbf{R}}
+
+\newenvironment{answer}{\bigskip\noindent\emph{Answer.}}{\hfill$\diamond$\newline}
+
+\begin{document}
+\maketitle
+
+\begin{exer}
+Type in the piecewise definition of the Fibonacci numbers.
+% f_n = {0, if n = 0; 1, if n = 1; f_{n - 1} + f_{n - 2}, otherwise }
+\end{exer}
+
+\newpage
+\begin{exer}
+Proposition 8.18: For all $m,n \in \bfR, (-m)(-n) = mn$.
+\end{exer}
+
+\newpage
+\begin{exer}
+Proposition 8.32: For all $x,y,z,w \in \bfR$:
+\begin{enumerate}
+  \item If $x < y$ then $x + z < y + z$.
+  \item If $x < y$ and $z < w$ then $x + z < y + w$.
+  \item If $0 < x < y$ and $0 < z \leq w$ then $xz < yw$.
+  \item If $x < y$ and $z < 0$ then $yz < xz$.
+\end{enumerate}
+
+\end{exer}
+
+\begin{claim}
+If $x < y$ then...
+\end{claim}
+\begin{proof}
+(Your proof)
+\end{proof}
+
+\begin{claim}
+If $x < y$ and $z < w$ then...
+\end{claim}
+\begin{proof}
+(Your proof)
+\end{proof}
+
+\newpage
+\begin{exer}
+Proposition 8.53: Every nonempty subset of $\bfR$ that is bounded below has a greatest lower bound. % Hint: If $M$ is a lower bound for $A$, then define $B = \{-x | x \in A\}$, show that $-M$ is an upper bound for $B$, and use Axiom 8.52.
+\end{exer}
+
+\end{document}
