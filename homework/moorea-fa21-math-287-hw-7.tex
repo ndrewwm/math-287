@@ -158,7 +158,35 @@ Proposition 8.53: Every nonempty subset of $\bfR$ that is bounded below has a gr
 \end{exer}
 
 \begin{proof}
-Let $A \subset \bfR$ where $A \neq \emptyset$, and let $M$ be a lower bound of $A$.
+Let $A \subseteq \bfR$ where $A \neq \emptyset$. Let us also assume that $A$ is bounded below. We intend to show that $A$ has a greatest lower bound. That is we will prove that $\exists c \in \bfR$ such that
+\begin{enumerate}
+  \item $\forall a \in A, c \leq a$ and
+  \item $\forall r \in \bfR$, if $r$ is a lower bound of $A$, $r \leq c$.
+\end{enumerate}
+First, let $M$ be a lower bound for $A$, and let $B = \{-a | a \in A\}$. If $M$ is a lower bound for $A$, this means that $\forall a \in A, M \leq a$. Then, let $b$ be an arbitrary member of $B$:
+\begin{equation}
+\begin{split}
+             b &\in B \\
+\Rightarrow -b &\in A \text{ (negation of b is in A)} \\
+\Rightarrow -b &\geq M \text{ (all elements of A are bounded below by M)} \\
+\Rightarrow b &\leq -M.
+\end{split}
+\end{equation}
+Because $b$ is arbitrary, this means that $-M$ is an upper bound of B. By Axiom 8.52, we know that every non-empty subset of $\bfR$ has a least upper bound. $B$ is a non-empty subset of $\bfR$, so $\exists k \in \bfR$ such that:
+\begin{enumerate}
+  \item $\forall b \in B, b \leq k$ and
+  \item $\forall r \in \bfR$, if $r$ is an upper bound of $B$, $k \leq r$.
+\end{enumerate}
+Given that we know some $k$ exists, we can say
+\begin{equation}
+\begin{split}
+k &\in \bfR \\
+\forall b \in B, b &\leq k \text{ (definition of an upper bound)} \\
+\forall b \in B, -b &\geq -k \text{ (multiplying both sides by -1)} \\
+\forall a \in A, a &\geq -k \text{ (because an arbitrary $a = -b$)}.
+\end{split}
+\end{equation}
+This means that $-k$ is a lower bound of $A$. Given $k$'s relationship with $B$, we can infer that $\forall r \in \bfR$, if $r$ is a lower bound of $A$, then $-k \geq r$. This meets the criteria we established at the beginning of the proof, meaning that $-k$ must be equal to $c$, the greatest lower bound of $A$.
 \end{proof}
 
 \end{document}
