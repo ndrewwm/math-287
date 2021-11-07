@@ -103,7 +103,7 @@ Proposition 9.7(ii): If $f: A \to B$ is surjective and $g: B \to C$ is surjectiv
 \begin{proof}
 Assume that $f: A \to B$ and $g: B \to C$ are surjective functions. We intend to show that $g \circ f$ is also surjective. That is \[ \exists c \in C, \forall a \in A: (g \circ f)(a) = c. \] $g \circ f$ is a composition of $f$ and $g$, defined as \[ g(f(a)) \text{ for all } a \in A. \]
 
-By hypothesis, we know that $f$ maps the entirety of $B$'s elements ($f$ is surjective). This means \[ \forall b \in B, \exists a \in A \text{ such that } f(a) = b. \] We also know that $g$ maps the entirety of C's elements ($g$ is surjective). That is \[ \forall c \in C, \exists b \in B \text{ such that } g(b) = c. \] Because $f \circ g$ is a composition, inputs ($a$'s) are evaluated first by $f$, and the subsequent outputs ($b$'s) are then fed as new inputs for $g$. Phrased differently, $g \circ f$ maps $A \to C$ by using the range of $f$ as the domain of $g$. This means, under the composition, all inputs to $g$ are outputs of $f$, and thus we can write
+By hypothesis, we know that $f$ maps the entirety of $B$'s elements ($f$ is surjective). This means \[ \forall b \in B, \exists a \in A \text{ such that } f(a) = b. \] We also know that $g$ maps the entirety of C's elements ($g$ is surjective). That is \[ \forall c \in C, \exists b \in B \text{ such that } g(b) = c. \] Because $f \circ g$ is a composition, inputs ($a$'s) are evaluated first by $f$, and the subsequent outputs ($b$'s) are then fed as new inputs for $g$. Phrased differently, $g \circ f$ maps $A \to C$ by using the range of $f$ as the domain of $g$. This means, under the composition, all inputs to $g$ are outputs of $f$. Thus we can write
 
 \begin{equation}
 \begin{split}
@@ -113,24 +113,86 @@ By hypothesis, we know that $f$ maps the entirety of $B$'s elements ($f$ is surj
 (g \circ f)(a) &= c.
 \end{split}
 \end{equation}
-Therefore, $g \circ f$ must be surjective. This concludes the proof.
+This means for every $c \in C$ (i.e., each output of $g(b)$), there must be an $a \in A$ that corresponds to it. Therefore, $g \circ f$ must be surjective. This concludes the proof.
 \end{proof}
 
 \newpage
 \begin{exer}
-Claims: Prove the claims:
+Prove the claims:
 
 For any $n \geq 2$, if $f_1, f_2, \dotsc, f_n$ are each injective, then $f_1 \circ f_2 \circ \dotsb \circ f_n$ is injective.
 
 For any $n \geq 2$, if $f_1, f_2, \dotsc, f_n$ are each surjective, then $f_1 \circ f_2 \circ \dotsb \circ f_n$ is surjective.
 
 For any $n \geq 2$, if $f_1, f_2, \dotsc, f_n$ are each bijective, then $f_1 \circ f_2 \circ \dotsb \circ f_n$ is bijective.
-
-(Hint: Use induction and Proposition 9.7.)
+%
+% (Hint: Use induction and Proposition 9.7.)
 \end{exer}
 
 \begin{claim}
-...
+For any $n \geq 2$, if $f_1, f_2, \dotsc, f_n$ are each injective, then $f_1 \circ f_2 \circ \dotsb \circ f_n$ is injective.
+\end{claim}
+\begin{proof}
+We will prove the claim using induction. Let $P(n)$ denote the claim for a set of $n$ functions. Using $P(2)$ as a base case case, we have $f_1$ and $f_2$ as two injective functions. With $f_1 \circ f_2$ being their composition, when applying Proposition 9.7 (i), we know that $f_1 \circ f_2$ is also injective. Therefore $P(2)$ is true.
+
+Assuming $P(n)$ is true for some $n \in N$, we will use this fact to prove it is also true for $P(n + 1)$. Ascending up to $P(n + 1)$, we have an $n + 1$ collection of functions, \[ f_1, f_2, \dotsc, f_n, f_{n + 1} \] and we are assembling the following composition \[ f_1 \circ f_2 \circ \dotsc \circ f_n \circ f_{n + 1}. \] Let $g$ be a function, representing $f_1 \circ f_2 \circ \dotsc \circ f_n$. We can rewrite our proposed composition as $g \circ f_{n + 1}.$ By hypothesis we know that $g$ is injective. From our initial assumptions, we know that $f_{n + 1}$ is also injective. Then, applying Proposition 9.7 (i) to $g \circ f_{n + 1}$ (a composition of two injective functions), we know the result will also be injective.
+
+Thus, any composition of injective functions will also be injective, for all $n \in \bfN$, where $n \geq 2$. This concludes the induction, and the proof.
+\end{proof}
+
+\begin{claim}
+For any $n \geq 2$, if $f_1, f_2, \dotsc, f_n$ are each surjective, then $f_1 \circ f_2 \circ \dotsb \circ f_n$ is surjective.
+\end{claim}
+\begin{proof}
+We will prove the claim using induction. Let $P(n)$ denote the claim for a set of $n$ functions. Using $P(2)$ as a base case case, we have $f_1$ and $f_2$ as two surjective functions. With $f_1 \circ f_2$ being their composition, when applying Proposition 9.7 (ii), we know that $f_1 \circ f_2$ is also surjective. Therefore $P(2)$ is true.
+
+Assuming $P(n)$ is true for some $n \in N$, we will use this fact to prove it is also true for $P(n + 1)$. Ascending up to $P(n + 1)$, we have an $n + 1$ collection of functions, \[ f_1, f_2, \dotsc, f_n, f_{n + 1} \] and we are assembling the following composition \[ f_1 \circ f_2 \circ \dotsc \circ f_n \circ f_{n + 1}. \] Let $g$ be a function, representing $f_1 \circ f_2 \circ \dotsc \circ f_n$. We can rewrite our proposed composition as $g \circ f_{n + 1}.$ By hypothesis we know that $g$ is surjective. From our initial assumptions, we know that $f_{n + 1}$ is also surjective. Then, applying Proposition 9.7 (i) to $g \circ f_{n + 1}$ (a composition of two surjective functions), we know the result will also be surjective.
+
+Thus, any composition of surjective functions will also be surjective, for all $n \in \bfN$, where $n \geq 2$. This concludes the induction, and the proof.
+\end{proof}
+
+\begin{claim}
+For any $n \geq 2$, if $f_1, f_2, \dotsc, f_n$ are each bijective, then $f_1 \circ f_2 \circ \dotsb \circ f_n$ is bijective.
+\end{claim}
+\begin{proof}
+We will prove the claim using induction. Let $P(n)$ denote the claim for a set of $n$ functions. Using $P(2)$ as a base case case, we have $f_1$ and $f_2$ as two bijective functions. With $f_1 \circ f_2$ being their composition, when applying Proposition 9.7 (iii), we know that $f_1 \circ f_2$ is also bijective. Therefore $P(2)$ is true.
+
+Assuming $P(n)$ is true for some $n \in N$, we will use this fact to prove it is also true for $P(n + 1)$. Ascending up to $P(n + 1)$, we have an $n + 1$ collection of functions, \[ f_1, f_2, \dotsc, f_n, f_{n + 1} \] and we are assembling the following composition \[ f_1 \circ f_2 \circ \dotsc \circ f_n \circ f_{n + 1}. \] Let $g$ be a function, representing $f_1 \circ f_2 \circ \dotsc \circ f_n$. We can rewrite our proposed composition as $g \circ f_{n + 1}.$ By hypothesis we know that $g$ is bijective. From our initial assumptions, we know that $f_{n + 1}$ is also bijective. Then, applying Proposition 9.7 (iii) to $g \circ f_{n + 1}$ (a composition of two bijective functions), we know the result will also be bijective.
+
+Thus, any composition of bijective functions will also be bijective, for all $n \in \bfN$, where $n \geq 2$. This concludes the induction, and the proof.
+\end{proof}
+
+\newpage
+\begin{exer}
+Suppose $f: A \to B$ and $g: B \to C$, so $g \circ f$ is a function $A \to C$. Prove the following claims:
+
+If $g \circ f$ is injective, then $f$ is injective.
+
+If $g \circ f$ is surjective, then $g$ is surjective.
+
+% (Hint: For any $c \in C$, you want to show there’s a $b \in B$ such that $g(b) = c$. The hypothesis tells you that there exists some $a \in A$ such that $(g \circ f)(a) = c$.)
+
+If $g \circ f$ is bijective, then $f$ is injective and $g$ is surjective. Explain why (use the previous claims) and give an example to show that $f$ doesn’t have to be surjective and $g$ doesn’t have to be injective.
+
+% (Hint: Give an example where $f$ is a function from a set with 2 elements to a set with 3 elements, and $g$ is from the set with 3 elements back to a set with 2 elements, such as $f: \{1, 2\} \to \to {11, 12, 13\}$ and $g: \{11, 12, 13\} \to \{21, 22\}. Even with this hint, you still have to state some specific $f$ and $g$ and explain why they satisfy what the example is asking for.)
+\end{exer}
+
+\begin{claim}
+If $g \circ f$ is injective, then $f$ is injective.
+\end{claim}
+\begin{proof}
+Suppose $g \circ f$ is injective. We intend to show that this implies $f$ is also injective. Let $h = g \circ f = g(f(a))$. From its definition, $h$ is injective. This means for all $a_1, a_2 \in A, a_1 \neq a_2$ implies that $h(a_1) \neq h(a_2)$. That is, each element in the codomain is associated with only one element in the domain.
+\end{proof}
+
+\begin{claim}
+If $g \circ f$ is surjective, then $g$ is surjective.
+\end{claim}
+\begin{proof}
+Suppose $g \circ f$ is surjective. We intend to show that this implies $g$ is also surjective. Let $h = g \circ f = g(f(a))$. From its definition, $h$ is surjective. This means that for each $c \in C, \exists a \in A$ such that $h(a) = c$.
+\end{proof}
+
+\begin{claim}
+If $g \circ f$ is bijective, then $f$ is injective and $g$ is surjective. Explain why (use the previous claims) and give an example to show that $f$ doesn’t have to be surjective and $g$ doesn’t have to be injective.
 \end{claim}
 \begin{proof}
 \end{proof}
