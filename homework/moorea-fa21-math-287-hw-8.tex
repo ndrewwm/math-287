@@ -12,7 +12,7 @@
 \usepackage{enumitem}
 
 % Extra space between lines
-\linespread{2.4}
+\linespread{1.4}
 
 \theoremstyle{remark}
 \newtheorem{exer}{Exercise}
@@ -26,6 +26,113 @@
 \begin{document}
 \maketitle
 
+\begin{exer}
+We need to find the determinants of these matrices:
 
+\[
+  \begin{bmatrix}
+    1 & 1 \\
+    1 & 2
+  \end{bmatrix},
+  \begin{bmatrix}
+    1 & 2 \\
+    2 & 3
+  \end{bmatrix},
+  \begin{bmatrix}
+    2 & 3 \\
+    3 & 5
+  \end{bmatrix},
+  \begin{bmatrix}
+    3 & 5 \\
+    5 & 8
+  \end{bmatrix},
+  \begin{bmatrix}
+    5 & 8 \\
+    8 & 13
+  \end{bmatrix}
+\]
+\end{exer}
+
+\begin{answer}
+The determinants are
+
+\[
+  \det \begin{bmatrix}
+    1 & 1 \\
+    1 & 2
+  \end{bmatrix} = 1,
+\]
+
+\[
+  \det \begin{bmatrix}
+    1 & 2 \\
+    2 & 3
+  \end{bmatrix} = -1,
+\]
+
+\[
+  \det \begin{bmatrix}
+    2 & 3 \\
+    3 & 5
+  \end{bmatrix} = 1,
+\]
+
+\[
+  \det \begin{bmatrix}
+    3 & 5 \\
+    5 & 8
+  \end{bmatrix} = -1,
+\]
+
+\[
+  \det \begin{bmatrix}
+    5 & 8 \\
+    8 & 13
+  \end{bmatrix} = 1.
+\]
+\end{answer}
+
+\newpage
+\begin{exer}
+Proposition 9.7(ii): If $f: A \to B$ is surjective and $g: B \to C$ is surjective, then $g \circ f: A \to C$ is surjective.
+% LaTeX: The composition sign is made with \circ, for example $g \circ f$ makes .
+%
+% Note: A proof for this was given in class. For the homework assignment you can find a proof yourself, or you can rewrite and explain the class proof in your own words.
+\end{exer}
+
+\begin{proof}
+Assume that $f: A \to B$ and $g: B \to C$ are surjective functions. We intend to show that $g \circ f$ is also surjective. That is \[ \exists c \in C, \forall a \in A: (g \circ f)(a) = c. \] $g \circ f$ is a composition of $f$ and $g$, defined as \[ g(f(a)) \text{ for all } a \in A. \]
+
+By hypothesis, we know that $f$ maps the entirety of $B$'s elements ($f$ is surjective). This means \[ \forall b \in B, \exists a \in A \text{ such that } f(a) = b. \] We also know that $g$ maps the entirety of C's elements ($g$ is surjective). That is \[ \forall c \in C, \exists b \in B \text{ such that } g(b) = c. \] Because $f \circ g$ is a composition, inputs ($a$'s) are evaluated first by $f$, and the subsequent outputs ($b$'s) are then fed as new inputs for $g$. Phrased differently, $g \circ f$ maps $A \to C$ by using the range of $f$ as the domain of $g$. This means, under the composition, all inputs to $g$ are outputs of $f$, and thus we can write
+
+\begin{equation}
+\begin{split}
+         f(a) &= b \\
+         g(b) &= c \\
+      g(f(a)) &= c \\
+(g \circ f)(a) &= c.
+\end{split}
+\end{equation}
+Therefore, $g \circ f$ must be surjective. This concludes the proof.
+\end{proof}
+
+\newpage
+\begin{exer}
+Claims: Prove the claims:
+
+For any $n \geq 2$, if $f_1, f_2, \dotsc, f_n$ are each injective, then $f_1 \circ f_2 \circ \dotsb \circ f_n$ is injective.
+
+For any $n \geq 2$, if $f_1, f_2, \dotsc, f_n$ are each surjective, then $f_1 \circ f_2 \circ \dotsb \circ f_n$ is surjective.
+
+For any $n \geq 2$, if $f_1, f_2, \dotsc, f_n$ are each bijective, then $f_1 \circ f_2 \circ \dotsb \circ f_n$ is bijective.
+
+(Hint: Use induction and Proposition 9.7.)
+\end{exer}
+
+\begin{claim}
+...
+\end{claim}
+\begin{proof}
+\end{proof}
 
 \end{document}
