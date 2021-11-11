@@ -21,6 +21,7 @@
 
 \newcommand{\bfN}{\mathbf{N}}
 \newcommand{\bfZ}{\mathbf{Z}}
+\newcommand{\bfR}{\mathbf{R}}
 
 \newenvironment{answer}{\bigskip\noindent\emph{Answer.}}{\hfill$\diamond$\newline}
 
@@ -38,8 +39,62 @@ Find or create a graphic to include, that you want to share. It can be a math im
 
 \newpage
 \begin{exer}
-Proposition 10.8 parts (ii)-(iii)
+Proposition 10.8. For all $x, y \in \bfR$:
+\begin{itemize}
+  \item[ (ii) ] $|xy| = |x| \cdot |y|$.
+  \item[ (iii) ] $-|x| \leq x \leq |x|$.
+\end{itemize}
 \end{exer}
+\begin{claim}[10.8 (ii)]
+$\forall x, y \in \bfR: |xy| = |x| \cdot |y|$
+\end{claim}
+\begin{proof}
+Let $x, y \in \bfR$. We will prove the claim using the following cases:
+\begin{itemize}
+  \item[1.] both $x, y > 0$.
+  \item[2.] both $x, y < 0$.
+  \item[3.] one of $x$ or $y$ is $<0$.
+  \item[4.] one or both of $x$ and $y$ are equal to 0.
+\end{itemize}
+
+Case 1. Take an element $z \in \bfR$, which is the product of $x$ and $y$, i.e., $x \cdot y = z$. Because $x$ and $y$ are positive, we know that $z$ is also positive. Therefore, we can write
+\begin{equation}
+\begin{split}
+|x| \cdot |y| &= x \cdot y\text{ (definition of absolute value)} \\
+              &= z \\
+              &= |z| \\
+              &= |x \cdot y|.
+\end{split}
+\end{equation}
+
+Case 2. Assume $z$ is the product of two negative real numbers denoted $-x$ and $-y$. We know from Prop. 8.18 that the product of two negative (real) numbers is a positive (real) number. Therefore, $z$ is still positive. Thus, we can write
+\begin{equation}
+\begin{split}
+|-x| \cdot |-y| &= x \cdot y \text{ (definition of absolute value)} \\
+                &= z \\
+                &= |z| \\
+                &= |-x \cdot -y|.
+\end{split}
+\end{equation}
+
+Case 3. Assume we have two real numbers, $-x$ (negative) and $y$ (positive). From Prop. 8.22 (iii), we know that the product of a negative real number and a positive real number is a negative number. We will call this product $-z$. By the definition of absolute values, we know that $|-z| = z$. So, we can write
+\begin{equation}
+\begin{split}
+|-x| \cdot |y| &= x \cdot y \text{ (definition of absolute value)} \\
+               &= z \\
+               &= |-z| \\
+               &= |-x \cdot y|.
+\end{split}
+\end{equation}
+
+Case 4. In an instance where either or both of $x$ and $y$ are 0, we can apply Proposition 10.8 (i), which lets us conclude $0 = |0| = |0 \cdot 0| = |x \cdot 0| = |0 \cdot y|$.
+
+Thus we have shown that $|x| \cdot |y| = |x \cdot y|$ for all $x, y \in \bfR$. This concludes the proof.
+\end{proof}
+
+\begin{claim}[10.8 (iii)]
+$\forall x, y \in \bfR: -|x| \leq x \leq |x|$
+\end{claim}
 \begin{proof}
 \end{proof}
 
@@ -53,7 +108,12 @@ Claim: $-y < x < y$ if and only if $|x| < y$.
 
 \newpage
 \begin{exer}
-Proposition 10.10 parts (i)-(iii)
+Proposition 10.10. Let $x, y, z \in \bfR$.
+\begin{itemize}
+  \item[ (i) ] $|x - y| = 0$ if and only if $x = y$.
+  \item[ (ii) ] $|x - y| = |y - x|$.
+  \item[ (iii) ] $|x - z| \leq |x - y| + |y - z|$.
+\end{itemize}
 \end{exer}
 \begin{proof}
 \end{proof}
