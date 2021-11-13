@@ -11,6 +11,7 @@
 \pagestyle{fancy}
 \usepackage{enumitem}
 \usepackage{graphicx}
+\graphicspath{ {../assets/} }
 
 % Extra space between lines
 \linespread{2.4}
@@ -28,15 +29,24 @@
 \begin{document}
 \maketitle
 
+%
+%
+% Question 1 (done)
+%
+%
 \begin{exer}
-Find or create a graphic to include, that you want to share. It can be a math image that you like such as a cool plot or interesting diagram, or a picture of an important mathematician. Or it can be a meme or joke. It doesn’t have to be math-related. However all images must be completely appropriate for sharing.
+Find or create a graphic to include, that you want to share.
 \end{exer}
-\begin{answer}
-% \begin{center}
-% \includegraphics[width=0.75\textwidth]{name of your graphic file}
-% \end{center}
-\end{answer}
+\begin{center}
+% note the \graphicspath argument above
+\includegraphics[width=0.75\textwidth]{pew-newspaper-revenue.png}
+\end{center}
 
+%
+%
+% Question 2
+%
+%
 \newpage
 \begin{exer}
 Proposition 10.8. For all $x, y \in \bfR$:
@@ -93,19 +103,31 @@ Thus we have shown that $|x| \cdot |y| = |x \cdot y|$ for all $x, y \in \bfR$. T
 \end{proof}
 
 \begin{claim}[10.8 (iii)]
-$\forall x, y \in \bfR: -|x| \leq x \leq |x|$
+$\forall x \in \bfR: -|x| \leq x \leq |x|$
 \end{claim}
 \begin{proof}
+Let $x \in \bfR$. First, in the instance where $x = 0$, we have \[ -|0| \leq 0 \leq |0| \Rightarrow 0 = 0 = 0. \] So, the statement holds. Then, consider the case when $x > 0$. We can see that \[ 0 < x = |x| \Rightarrow 0 < x \leq |x| \] by the definition of absolute value (i.e., it is true to say $x$ is less than \emph{or equal to} $|x|$).
 \end{proof}
 
+%
+%
+% Question 3
+%
+%
 \newpage
 \begin{exer}
 Claim: $-y < x < y$ if and only if $|x| < y$.
 % Hint: consider cases depending on whether x >= 0 or x < 0.
 \end{exer}
 \begin{proof}
+
 \end{proof}
 
+%
+%
+% Question 4
+%
+%
 \newpage
 \begin{exer}
 Proposition 10.10. Let $x, y, z \in \bfR$.
@@ -115,7 +137,41 @@ Proposition 10.10. Let $x, y, z \in \bfR$.
   \item[ (iii) ] $|x - z| \leq |x - y| + |y - z|$.
 \end{itemize}
 \end{exer}
+\begin{claim}
+$|x - y| = 0$ if and only if $x = y$.
+\end{claim}
 \begin{proof}
+$\Rightarrow$ Let $j = (x - y)$. We  are told that $|j| = 0$. From Proposition 10.8, we know that $j$ must be equal to 0. By Axiom 8.4 and Proposition 8.11, this means that $x$ must equal $y$.
+
+$\Leftarrow$ Assume $x = y$. Via substitution we can say
+\begin{equation}
+\begin{split}
+&            |x - y| = 0 \\
+&\Rightarrow |x - x| = 0 \\
+&\Rightarrow     |0| = 0 \\
+&\Rightarrow       0 = 0.
+\end{split}
+\end{equation}
+
+Thus, we have shown that if $|x - y| = 0$, $x$ must equal $y$; and we have shown that if $x = y$, the absolute value of $(x - y)$ must be equal to 0. This concludes the proof.
 \end{proof}
+
+\begin{claim}
+$|x - y| = |y - x|$
+\end{claim}
+\begin{proof}
+First, consider a case where either $x = 0$ or $y = 0$. For brevity, we will focus on $x = 0$, but the same conclusion follows if we were to use $y$, because $x$ and $y$ are arbitrary real numbers. If $x = 0$, then we have
+\begin{align*}
+|x - y| &= |0 - y|  &  |y - x| &= |y - 0| \\
+        &= |-y|     &          &= |y| \\
+        &= y        &          &= y.
+\end{align*}
+
+Now consider a case where $x > y$, and let $j = x - y$ and $h = y - x$. So, $x - y \in \bfR_{>0}$. This means that $j \in \bfR_{>0}$. By the definition of absolute value, $|j| \in \bfR_{>0}$, because $|j| = j$.
+\end{proof}
+
+\begin{claim}
+$|x - z| \leq |x - y| + |y - z|$
+\end{claim}
 
 \end{document}
