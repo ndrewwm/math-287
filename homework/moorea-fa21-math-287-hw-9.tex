@@ -44,7 +44,7 @@ Find or create a graphic to include, that you want to share.
 
 %
 %
-% Question 2
+% Question 2 (done)
 %
 %
 \newpage
@@ -106,21 +106,68 @@ Thus we have shown that $|x| \cdot |y| = |x \cdot y|$ for all $x, y \in \bfR$. T
 $\forall x \in \bfR: -|x| \leq x \leq |x|$
 \end{claim}
 \begin{proof}
-Let $x \in \bfR$. First, in the instance where $x = 0$, we have \[ -|0| \leq 0 \leq |0| \Rightarrow 0 = 0 = 0. \] So, the statement holds. Then, consider the case when $x > 0$. We can see that \[ 0 < x = |x| \Rightarrow 0 < x \leq |x| \] by the definition of absolute value (i.e., it is true to say $x$ is less than \emph{or equal to} $|x|$).
+Let $x \in \bfR$. First, in the instance where $x = 0$, we have \[ -|0| \leq 0 \leq |0| \Rightarrow 0 = 0 = 0. \] So, the statement holds. Now we will consider instances when $x \neq 0$. As a consequence, this means $-|x| < 0 < |x|$. Note that when $x > 0$, $|x| = x$, and also note that when $x < 0$, $|x| = -x$. Then, we can say
+\begin{align*}
+\text{ if } x &> 0 \text{, then } & \text{ if } x &< 0 \text{, then } \\
+-|x| &< x                 & x &< |x| \\
+-|x| &< x \leq |x|        & -|x| &\leq x < |x|.
+\end{align*}
+
+Thus, we have shown for all $x \in \bfR$, $-|x| \leq x \leq |x|$. This concludes the proof.
 \end{proof}
 
 %
 %
-% Question 3
+% Question 3 (done)
 %
 %
 \newpage
 \begin{exer}
-Claim: $-y < x < y$ if and only if $|x| < y$.
+Let $x, y \in \bfR$. Claim: $-y < x < y$ if and only if $|x| < y$.
 % Hint: consider cases depending on whether x >= 0 or x < 0.
 \end{exer}
 \begin{proof}
+$\Rightarrow$ Let us assume $x \geq 0$. We are told that $-y < x < y$. This means that $y > 0$. Note that because $x \geq 0$, $x = |x|$. So, we can write
+\begin{equation}
+\begin{split}
+x < y &\Rightarrow y - x \in \bfR_{>0} \\
+      &\Rightarrow y - |x| \in \bfR_{>0} \\
+      &\Rightarrow |x| < y.
+\end{split}
+\end{equation}
 
+Alternatively, assume $x < 0$. We are told that $-y < x$. This also indicates that $y > 0$. Note that since $x < 0$, $|x| = -x$. So, we have
+\begin{equation}
+\begin{split}
+-y < x &\Rightarrow y > -x \text{ (Proposition 8.37 (i))} \\
+       &\Rightarrow -x < y \text{ (Rearranging)} \\
+       &\Rightarrow |x| < y. \text{ (Because $|x| = -x$)}
+\end{split}
+\end{equation}
+
+$\Leftarrow$ Assume $|x| < y$, and that $x \geq 0$. This means that $y > 0$. Note again that $x = |x|$. Then we can say
+\begin{equation}
+\begin{split}
+|x| < y &\Rightarrow y - |x| \in \bfR_{>0} \\
+        &\Rightarrow y - x \in \bfR_{>0} \\
+        &\Rightarrow x < y \\
+        &\Rightarrow x > -y \text{ (Proposition 8.37 (i))} \\
+        &\Rightarrow -y < x \text{ (Rearranging)} \\
+        &\Rightarrow -y < x < y.
+\end{split}
+\end{equation}
+
+Alternatively, examine a case where $x < 0$. Note that $|x| = -x$. Then we have
+\begin{equation}
+\begin{split}
+|x| < y &\Rightarrow -x < y \\
+        &\Rightarrow x > -y \text{ (Proposition 8.37 (i))} \\
+        &\Rightarrow -y < x \text{ (Rearranging)} \\
+        &\Rightarrow -y < x < y.
+\end{split}
+\end{equation}
+
+Thus, we have shown $-y < x < y$ if and only if $|x| < y$. This concludes the proof.
 \end{proof}
 
 %
@@ -146,10 +193,9 @@ $\Rightarrow$ Let $j = (x - y)$. We  are told that $|j| = 0$. From Proposition 1
 $\Leftarrow$ Assume $x = y$. Via substitution we can say
 \begin{equation}
 \begin{split}
-&            |x - y| = 0 \\
-&\Rightarrow |x - x| = 0 \\
-&\Rightarrow     |0| = 0 \\
-&\Rightarrow       0 = 0.
+|x - y| = 0 &\Rightarrow |x - x| = 0 \\
+            &\Rightarrow     |0| = 0 \\
+            &\Rightarrow       0 = 0.
 \end{split}
 \end{equation}
 
