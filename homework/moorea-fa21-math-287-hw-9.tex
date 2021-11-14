@@ -172,7 +172,7 @@ Thus, we have shown $-y < x < y$ if and only if $|x| < y$. This concludes the pr
 
 %
 %
-% Question 4
+% Question 4 (done)
 %
 %
 \newpage
@@ -213,11 +213,30 @@ First, consider a case where either $x = 0$ or $y = 0$. For brevity, we will foc
         &= y        &          &= y.
 \end{align*}
 
-Now consider a case where $x > y$, and let $j = x - y$ and $h = y - x$. So, $x - y \in \bfR_{>0}$. This means that $j \in \bfR_{>0}$. By the definition of absolute value, $|j| \in \bfR_{>0}$, because $|j| = j$.
+So, the statement holds. Now consider a case where $x,y \neq 0$. We have
+\begin{align*}
+|x - y| &= |y - x| \\
+        &= |(-1)(-y + x)| \\
+        &= |-1| \cdot |-y + x| \text{ (Proposition 10.8 (ii))} \\
+        &= 1 \cdot |-y + x| \\
+        &= |-y + x| \\
+        &= |x - y|. \text{ (Rearranging)}
+\end{align*}
+
+Thus, we have shown that $|x - y| = |x - y|$. This concludes the proof.
 \end{proof}
 
 \begin{claim}
 $|x - z| \leq |x - y| + |y - z|$
 \end{claim}
-
+\begin{proof}
+Let $x,y,z \in \bfR$. We know from Proposition 10.8 (iv), that $\forall j,k \in \bfR$, $|j + k| \leq |j| + |k|$. Let $j = x - y$, and $k = y - z$. This means we can say
+\begin{align*}
+            |j + k| &\leq |j| + |k| \text{ (Proposition 10.8 (iv))} \\
+|(x - y) + (y - z)| &\leq |x - y| + |y - z| \text{ (Substituting on the LHS)} \\
+    |x - y + y - z| &\leq |x - y| + |y - z| \\
+            |x - z| &\leq |x - y| + |y - z|.
+\end{align*}
+Thus we have shown that $|x - z| \leq |x - y| + |y - z|$. This concludes the proof.
+\end{proof}
 \end{document}
