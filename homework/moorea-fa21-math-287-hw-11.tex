@@ -28,4 +28,37 @@
 \begin{document}
 \maketitle
 
+\begin{exer}
+Suppose $f: A \to B$ is surjective. Then, for any set C and functions $g_1, g_2 : B \to C$, if $g_1 \circ f = g_2 \circ f$, $g_1 = g_2$.
+\end{exer}
+
+\begin{proof}
+Let $f: A \to B$ and $g_1, g_2 : B \to C$ be functions. We are examining compositions between $f$ and $g_1, g_2$. From our hypothesis, we have $g_1 \circ f = g_2 \circ f$. From the definition of a composition, we know $g_1 \circ f: A \to C$ is defined by $(g_1 \circ f)(a) = c$ for all $a \in A$, and $g_2 \circ f: A \to C$ is defined by $(g_2 \circ f)(a) = c$ for all $a \in A$. Additionally, we know that $f$ is surjective. This means that for every $b \in B$, there exists some $a \in A$ such that $f(a) = b$. Thus, we can write
+\begin{align*}
+     g_1 \circ f &= g_2 \circ f \tag{starting assumption} \\
+(g_1 \circ f)(a) &= (g_2 \circ f)(a) \\
+       g_1(f(a)) &= g_2(f(a)) \tag{definition of a composition} \\
+          g_1(b) &= g_2(b) \\
+             g_1 &= g_2.
+\end{align*}
+Because for all $b \in B, \exists a \in A$ such that $f(a) = b$ (surjectivity of $f$), and $g_1 \circ f = g_2 \circ f$, we know that the $a$ being fed to $f$ is the same element of $A$. This means the result of $f(a)$, is the same $b$ on both sides of the equality. Thus we have shown $g_1 = g_2$. This concludes the proof.
+\end{proof}
+
+\newpage
+\begin{exer}
+a. Find and prove a formula for $2 + 5 + 8 + 11 + \cdots + (3n - 1)$.
+
+b. Prove: for all positive odd integers $n, 5^n - n^2$ is divisible by 4.
+\end{exer}
+
+\newpage
+\begin{exer}
+Proposition 11.25.
+\end{exer}
+
+\newpage
+\begin{exer}
+Re-do a problem.
+\end{exer}
+
 \end{document}
