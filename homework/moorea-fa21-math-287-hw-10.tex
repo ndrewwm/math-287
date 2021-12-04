@@ -22,14 +22,13 @@
 \newcommand{\bfN}{\mathbf{N}}
 \newcommand{\bfZ}{\mathbf{Z}}
 
-
-\newenvironment{answer}{\bigskip\noindent\emph{Answer.}}{\hfill$\diamond$\newline}
+\newenvironment{answer}{\noindent\emph{Answer.}}{\hfill$\diamond$\newline}
 
 \begin{document}
 \maketitle
 
 \begin{exer}
-Suppose $f$ is a function $f : \{a,b,c\} \to \{u,v\}$ and we have $f(a)=u$ and $f(b)=u$.
+Suppose $f$ is a function $f: \{a,b,c\} \to \{u,v\}$ and we have $f(a)=u$ and $f(b)=u$.
 How should we define $f(c)$ if we want $f$ to be surjective (onto)?
 \end{exer}
 
@@ -126,7 +125,33 @@ We used a dashed line to show $f(c)=v$ that was the answer to the question.
 
 \newpage
 \begin{exer}
-Finally, redo one problem from a previous homework assignment. Your score will count for this homework, not the previous one. Along with your answer, write a short reflection essay (1-2 paragraphs) about what you learned.
+Finally, redo one problem from a previous homework assignment. % Your score will count for this homework, not the previous one. Along with your answer, write a short reflection essay (1-2 paragraphs) about what you learned.
+
+Problem: "Prove that for all $k \in \bfN, 5^k + 3$ is divisible by 4.
 \end{exer}
+
+\begin{answer}
+This is question 4 from Homework 3. I've omitted the 3 initial items that ask to show the statement is true for $k = 1, 2, 3$, which I hope is okay. I was docked points for arithmetic mistakes during the proof's inductive step. Here is my full and (hopefully) corrected version.
+
+\begin{proof}
+We will use induction on $k$. Let $P(k)$ denote the statement $5^k + 3$ is divisible by 4. As a base case $P(k = 1)$ we see \[ 5^1 + 3 = 5 + 3 = 8 = 4 \cdot 2. \] We will now assume $P(k)$ is true, and use this to show that $P(k + 1)$ is also true. To say $P(k)$ is true means $\exists y \in \bfZ$ such that $4y = 5^k + 3$. We need to show that $P(k + 1)$ is true, i.e., that $4z = 5^{k + 1} + 3$ for some $z \in \bfZ$. First, note that $5^k = 4y - 3$. Then, rearranging the right-hand side, we have
+\begin{align*}
+4z &= 5^{k + 1} + 3 \\
+4z &= 5^k \cdot 5^1 + 3 \\
+4z &= (4y - 3) \cdot 5 + 3 \\
+4z &= 20y - 15 + 3 \\
+4z &= 20y - 12 \\
+ z &= 5y - 3.
+\end{align*}
+We have shown that $\exists z \in \bfZ$, such that $4 \cdot z = 5^{k + 1} + 3$. By our inductive hypothesis, we know that $y \in \bfZ$, and from our axioms, we know that the multiplication and subtraction of integers (i.e., $5y - 3$) results in another integer. So, we know the statement is true for all $k \in \bfN$. This concludes our induction, and the proof.
+\end{proof}
+
+% Along with your answer, write a short reflection essay (1-2 paragraphs) about what you learned.
+
+From the units that covered induction and the natural numbers, I've developed an appreciation for how powerful induction is. When initially exposed to induction as a method, I wasn't really able to understand the sort of "domino"-esque fulfillment of such proofs. I think this was because I was fixated on actually trying to conceptualize performing a given operation an infinite number of times.
+
+However, as I worked through more problems requiring induction, I realize their power and elegance comes from the ability to choose an arbitrary $k$ (after evaluating the statement $P$ at $k$) and show that the statement $P$ holds for the immediately following $k$ (i.e., $k + 1$). The method actually allows for a smooth and familiar writing style that can actually result in a compact and well-organized proof, compared to other approaches on the same problem. However, as my stumbling on the problem initially shows, it requires careful handling of the variables being used for induction. I guess one can always benefit from more practice working with exponents!
+
+\end{answer}
 
 \end{document}
