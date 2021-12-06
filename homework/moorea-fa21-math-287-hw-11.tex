@@ -102,6 +102,14 @@ Proposition 11.25. Let $b, c, p, q \in \bfR$. If $x^2 - bx - c = 0$ has two solu
 % This problem is less complicated than it might at first appear. They give you a formula for a_k; plug that into the recurrence relation, and check that both sides come out to the same value, once you do some algebraic simplifications (group like terms and pull out common factors).
 
 \begin{proof}
+By induction on $n$. Let $b, c, p, q \in \bfR$. We will show that the sequence $a_k$ satisfies the recurrence relation $a_n$ for all $n \geq 3$. As a base case, n = 3, we have
+\begin{align*}
+a_n &= ba_{3 - 1} + ca_{3 - 2} \\
+    &= ba_2 + ca_1 \\
+    &= b(ps^2 + qt^2) + c(ps + qt) \\
+    &= (b + c)(p^2s^3 + q^2t^3) \\
+    &= ... ... ...
+\end{align*}
 \end{proof}
 
 \newpage
@@ -112,13 +120,17 @@ Re-do a problem: Homework 5, problem 4: "$(A \times B) \cap (C \times D) = (A \c
 \begin{answer}
 I was marked down for not being adequately thorough in my answer. Here is my revised proof.
 \begin{proof}
-Take an element $x$ on the left-hand side, and let $x = (i, j)$. This element is in the intersection of $A \times B$ and $C \times D$, that is, $x \in A \times B$ \emph{and} $x \in C \times D$. This means that $i \in A$ and $j \in B$ and that $i \in C$ and $j \in D$. From these observations, we can determine that $i \in A \cap C$ and $j \in B \cap D$. So, we can conclude that $x = (i, j) \in (A \cap C) \times (B \cap D)$, i.e., \[ (A \times B) \cap (C \times D) \subseteq (A \cap C) \times (B \cap D). \]
+Take an element $x$ on the left-hand side, and let $x = (i, j)$. This element is in the intersection of $A \times B$ and $C \times D$, that is, $x \in A \times B$ \emph{and} $x \in C \times D$. This means that $i \in A$ and $j \in B$ and that $i \in C$ and $j \in D$. From these observations, we can state that $i \in A \cap C$ and $j \in B \cap D$. So, we can conclude that $x = (i, j) \in (A \cap C) \times (B \cap D)$, i.e., \[ (A \times B) \cap (C \times D) \subseteq (A \cap C) \times (B \cap D). \]
 
-Now, we will examine an element $y$ on the right-hand side, letting $y = (k, l)$. The element $y$ is in the cross product of the two intersections of $A \cap C$ and $B \cap D$. By definition, this means that $k \in A \cap C$ and $l \in B \cap D$. Stated explicitly, this means $k \in A, l \in B, k \in C, \text{ and } l \in D$.
+Now, we will examine an element $y$ on the right-hand side, letting $y = (k, l)$. The element $y$ is in the cross product of the two intersections of $A \cap C$ and $B \cap D$. By definition, this means that $k \in A \cap C$ and $l \in B \cap D$. Stated explicitly, this means $k \in A$, $l \in B$, $k \in C$, and $l \in D$.
 If we take the cross product of $A$ and $B$, $(k, l)$ is a member of $A \times B$. Similarly, if we take the cross product of $C$ and $D$, $(k, l)$ is a member of $C \times D$. Thus, $y = (k, l) \in (A \times B) \cap (C \times D)$. So, we can say \[ (A \times B) \cap (C \times D) \supseteq (A \cap C) \times (B \cap D). \]
 
 We have shown that \[ (A \times B) \cap (C \times D) \subseteq (A \cap C) \times (B \cap D) \] and \[ (A \times B) \cap (C \times D) \supseteq (A \cap C) \times (B \cap D). \] Thus, we can conclude \[ (A \times B) \cap (C \times D) = (A \cap C) \times (B \cap D). \]
 \end{proof}
+
+Unlike other areas of this course, I've felt more immediately comfortable with set theory, and I have enjoyed its appearances across the different classes I've taken thus far. From what I've been exposed to, it seems like proofs within set theory can often be written as direct proofs, or proof by contrapositive. The rules regarding relations between elements/sets feel very logical, and this results in proofs that feel more transparent when reading them (in my opinion). I feel like I'm more likely to grok a proof about sets on my first 1-2 readings than with other topics.
+
+For this problem, I tried to focus on the feedback from the grader. They indicated I had been too sparse in my setup of the elements I would track on either side of the proposed equality. Precise language is always important for writing in mathematics, but when discussing sets, it feels like you have an ability (and thus, an obligation) to provide clear descriptions for the objects you're discussing.
 \end{answer}
 
 \end{document}
